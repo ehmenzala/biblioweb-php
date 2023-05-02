@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,20 @@
 </head>
 <body>
     <header>
-        <div class="head">
-            <div class="logo">
-                <a href="#">Logo</a>
+        <div class="header-top">
+            <img
+              src="../assets/img/logo-desktop.png"
+              alt="Logo de Biblioweb: Libro abierto por la mitad con partículas desvaneciéndose del lado derecho"
+            />
+            <input
+              type="search"
+              placeholder="Libro o autor"
+              aria-placeholder="Buscar por libro o autor"
+            />
+            <a href="#">Log in</a><span> // </span><a href="#">Sign up</a>
+          </div> 
+          <div class="head">
+            
             </div>
             
             <nav class="navbar">
@@ -22,10 +33,25 @@
                 <a href="#">EQUIPO</a>
             </nav>
         </div>
-
+        <div>
+            <nav aria-label="breadcrumbs">
+                <ol class="breadcrumb-list">
+                  <li class="breadcrumb-item">
+                    <a class="breadcrumb-link" href="#" aria-current="location"
+                      >Libros</a>
+                      <li class="breadcrumb-item">
+                        <a class="breadcrumb-link" href="#" aria-current="location"
+                          >Fantasia</a>
+                          <li class="breadcrumb-item">
+                            <a class="breadcrumb-link" href="#" aria-current="location"
+                              >Don Quijote</a>
+                  </li>
+                </ol>
+              </nav>
+        </div>
     </header>
     <section class="content header">
-        <img class="Libro" src="Libro.jpg"></img>
+        <img class="Libro" src="../assets/img/portada-book.jpg"></img>
         <article class="Nombre-libro">
             <h1>Don Quijote</h1>
             <hp class="nombre">Miguel de Cervantes</hp>
@@ -52,6 +78,7 @@
     <section class="content lib">
         <article class="title">
             <h1 class="title1">LEE COMODAMENTE DONDE QUIERAS</h1>
+            <img class="Logo" src="../assets/img/logo-desktop.png"></img>
             <h3 class="title2">Novelas, clasico y best-sellers</h3>
             <p>Biblioweb es la mayor biblioteca de libros electronicos de Peru por suscripcion.Mas de 10000 obras en la web: novela policiaca, ciencia ficcion, fantasia, novela romantica, libros de psicologia empresarial, para ninos, literatura moderna y clasica.</p>
             <h3 class="title3">Recomendamos los mejores libros</h3>
@@ -98,7 +125,39 @@
             </div>
             <div class="footer-links">
                 <h4>Siguenos</h4>
-                <ul>
+                <ul class="footer-link__link-list">
+                  <li class="footer-social-icon-wrapper">
+                    <a href="#">
+                      <img
+                        src="../assets/img/icons/instagram-icon.svg"
+                        alt="Ícono de Instagram"
+                      />
+                    </a>
+                  </li>
+                  <li class="footer-social-icon-wrapper">
+                    <a href="#">
+                      <img
+                        src="../assets/img/icons/facebook-icon.svg"
+                        alt="Ícono de Facebook"
+                      />
+                    </a>
+                  </li>
+                  <li class="footer-social-icon-wrapper">
+                    <a href="#">
+                      <img
+                        src="../assets/img/icons/youtube-icon.svg"
+                        alt="Ícono de YouTube"
+                      />
+                    </a>
+                  </li>
+                  <li class="footer-social-icon-wrapper">
+                    <a href="#">
+                      <img
+                        src="../assets/img/icons/twitter-icon.svg"
+                        alt="Ícono de Twitter"
+                      />
+                    </a>
+                  </li>
                 </ul>
             </div>
         </div>
