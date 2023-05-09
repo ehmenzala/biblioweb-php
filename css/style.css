@@ -107,3 +107,18 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* Utility classes */
+
+.container {
+  width: 75rem;
+  max-width: 92.5%;
+  margin-inline: auto;
+}
+
+/* General styling */
+
+body {
+  font-size: var(--fs-400);
+  background-color: var(--clr-primary-100);
+}
