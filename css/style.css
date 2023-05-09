@@ -20,10 +20,12 @@
   --clr-primary-500: hsl(228, 33%, 61%);
   --clr-primary-400: hsl(260, 64%, 72%);
   --clr-primary-200: hsl(276, 95%, 77%);
+  --clr-primary-100: hsl(260, 29%, 94%);
   --clr-secondary-400: hsl(39, 92%, 61%);
   --clr-accent-900: hsl(257, 21%, 16%);
   --clr-accent-500: hsl(0, 0%, 38%);
   --clr-accent-400: hsl(0, 2%, 92%);
+  --clr-accent-100: hsl(0, 0%, 100%);
   --gradiend-primary-400: linear-gradient(
     to right,
     var(--clr-accent-500),
