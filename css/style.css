@@ -15,3 +15,29 @@
   src: url("../assets/fonts/Montserrat-SemiBold.ttf");
   font-weight: 600;
 }
+
+:root {
+  --clr-primary-500: hsl(228, 33%, 61%);
+  --clr-primary-400: hsl(260, 64%, 72%);
+  --clr-primary-200: hsl(276, 95%, 77%);
+  --clr-secondary-400: hsl(39, 92%, 61%);
+  --clr-accent-900: hsl(257, 21%, 16%);
+  --clr-accent-500: hsl(0, 0%, 38%);
+  --clr-accent-400: hsl(0, 2%, 92%);
+  --gradiend-primary-400: linear-gradient(
+    to right,
+    var(--clr-accent-500),
+    var(--clr-primary-200)
+  );
+
+  --fs-300: 0.875rem;
+  --fs-200: 0.96875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.5rem;
+  --fs-700: 2rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+}
