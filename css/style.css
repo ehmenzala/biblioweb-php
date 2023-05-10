@@ -121,6 +121,21 @@ button {
   margin-inline: auto;
 }
 
+.btn {
+  display: block;
+  border: none;
+  cursor: pointer;
+  padding: 1.125rem 3.375rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+  border-radius: 999px;
+}
+
+.btn-primary {
+  color: hsl(0, 27%, 98%);
+  background-image: var(--gradiend-primary-400);
+}
+
 /* General styling */
 
 body {
