@@ -144,3 +144,10 @@ body {
   font-family: var(--ff-400);
   background-color: var(--clr-primary-100);
 }
+
+input {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  outline-color: var(--clr-accent-900);
+}
