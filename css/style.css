@@ -23,17 +23,20 @@
   --clr-primary-100: hsl(260, 29%, 94%);
   --clr-secondary-400: hsl(39, 92%, 61%);
   --clr-accent-900: hsl(257, 21%, 16%);
-  --clr-accent-500: hsl(0, 0%, 38%);
+  --clr-accent-700: hsl(0, 0%, 38%);
+  --clr-accent-600: hsl(0, 0%, 45%);
+  --clr-accent-500: hsl(248, 4%, 41%);
   --clr-accent-400: hsl(0, 2%, 92%);
+  --clr-accent-200: hsl(0, 0%, 97%);
   --clr-accent-100: hsl(0, 0%, 100%);
   --gradiend-primary-400: linear-gradient(
     to right,
-    var(--clr-accent-500),
+    var(--clr-primary-500),
     var(--clr-primary-200)
   );
 
-  --fs-300: 0.875rem;
-  --fs-200: 0.96875rem;
+  --fs-200: 0.875rem;
+  --fs-300: 0.96875rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 1.5rem;
@@ -42,6 +45,8 @@
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
+
+  --ff-400: "Montserrat";
 }
 
 /* CSS Reset */
@@ -119,6 +124,8 @@ button {
 /* General styling */
 
 body {
+  padding-top: 2rem;
   font-size: var(--fs-400);
+  font-family: var(--ff-400);
   background-color: var(--clr-primary-100);
 }
