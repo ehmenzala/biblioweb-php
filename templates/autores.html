@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioweb: Página de autores</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header class="container">
@@ -21,22 +22,20 @@
             aria-placeholder="Buscar por libro o autor"
           />
         </div>
-        <a class="header-session-link" href="templates/login.html">Log in</a
+        <a class="header-session-link" href="login.html">Log in</a
         ><span class="header-session-link--deco"> // </span
-        ><a class="header-session-link" href="templates/register.html"
-          >Sign up</a
-        >
+        ><a class="header-session-link" href="register.html">Sign up</a>
       </div>
       <nav class="page-nav">
         <ul class="page-nav-links" role="list">
           <li class="page-nav-item">
-            <a class="page-nav-link" href="templates/libros.html">Libros</a>
+            <a class="page-nav-link" href="libros.html">Libros</a>
           </li>
           <li class="page-nav-item">
-            <a class="page-nav-link" href="templates/autores.html">Autores</a>
+            <a class="page-nav-link" href="autores.html">Autores</a>
           </li>
           <li class="page-nav-item">
-            <a class="page-nav-link" href="templates/rating.html">Rating</a>
+            <a class="page-nav-link" href="rating.html">Rating</a>
           </li>
           <li class="page-nav-item">
             <a class="page-nav-link" href="#">Equipo</a>
@@ -45,7 +44,7 @@
       </nav>
     </header>
     <main>
-      <nav aria-label="breadcrumbs">
+      <nav aria-label="breadcrumbs" class="container section breadcrumbs">
         <ol class="breadcrumb-list" role="list">
           <li class="breadcrumb-item">
             <a class="breadcrumb-link" href="#" aria-current="location"
@@ -54,52 +53,52 @@
           </li>
         </ol>
       </nav>
-      <section class="container">
+      <section class="container section authors-section">
         <h1 class="h2">Nuestros autores</h1>
         <div class="authors-gallery">
-          <div class="author">
+          <figure class="author">
             <img
               class="author-image"
               src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
               alt="Imagen del autor"
             />
-            <p class="author-name">Jhon Dough</p>
-          </div>
-          <div class="author">
+            <figcaption class="author-name">Jhon Dough</figcaption>
+          </figure>
+          <figure class="author">
             <img
               class="author-image"
               src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
               alt="Imagen del autor"
             />
-            <p class="author-name">Jhon Dough</p>
-          </div>
-          <div class="author">
+            <figcaption class="author-name">Jhon Dough</figcaption>
+          </figure>
+          <figure class="author">
             <img
               class="author-image"
               src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
               alt="Imagen del autor"
             />
-            <p class="author-name">Jhon Dough</p>
-          </div>
-          <div class="author">
+            <figcaption class="author-name">Jhon Dough</figcaption>
+          </figure>
+          <figure class="author">
             <img
               class="author-image"
               src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
               alt="Imagen del autor"
             />
-            <p class="author-name">Jhon Dough</p>
-          </div>
-          <div class="author">
+            <figcaption class="author-name">Jhon Dough</figcaption>
+          </figure>
+          <figure class="author">
             <img
               class="author-image"
               src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
               alt="Imagen del autor"
             />
-            <p class="author-name">Jhon Dough</p>
-          </div>
+            <figcaption class="author-name">Jhon Dough</figcaption>
+          </figure>
         </div>
       </section>
-      <section class="container">
+      <section class="container section info-section">
         <div class="info-header">
           <h2 class="section-title">Lee cómodamente donde quieras</h2>
           <img
@@ -188,11 +187,16 @@
         </div>
         <div class="footer-link">
           <h4 class="footer-link__title">Acerca del registro</h4>
-          <a class="footer-link__contact-btn" href="#">8 (025) 752-33-03</a>
+          <a class="btn btn-primary footer-link__contact-btn" href="#"
+            >8 (025) 752-33-03</a
+          >
         </div>
         <div class="footer-link">
           <h4 class="footer-link__title">Síguenos</h4>
-          <ul class="footer-link__link-list" role="list">
+          <ul
+            class="footer-link__link-list footer-link__link-list--social-media"
+            role="list"
+          >
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
