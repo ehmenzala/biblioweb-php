@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioweb: Regístrate</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="registration-body">
     <header class="container">
@@ -50,12 +51,19 @@
       <p>
         Llena tus credenciales y adéntrate al maravilloso mundo de la lectura
       </p>
-      <label for="username">Usuario</label>
-      <input type="text" id="username" placeholder="Ej. robcmartin" />
-      <label for="pass">Contraseña</label>
-      <input type="password" id="pass" placeholder="*************" />
+      <div class="input-box">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" placeholder="Ej. robcmartin" />
+      </div>
+      <div class="input-box">
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" placeholder="*************" />
+      </div>
       <button class="btn btn-primary">Regístrate</button>
-      <span>¿Ya tienes una cuenta? </span><a href="login.html">Inicia sesión</a>
+      <div class="registration-info-text">
+        <span>¿Ya tienes una cuenta? </span
+        ><a href="login.html">Inicia sesión</a>
+      </div>
     </article>
 
     <footer>
