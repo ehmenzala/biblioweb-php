@@ -243,9 +243,264 @@ header.container > * + * {
   background-color: var(--clr-primary-400);
 }
 
+/* Page section (Styles for all page sections) */
+
+.section {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: var(--clr-accent-100);
+}
+
+.breadcrumbs {
+  background-color: transparent;
+}
+
+/* Breadcrumbs */
+
+.breadcrumb-list {
+  padding-left: 0;
+  margin-block: 0;
+}
+
+.breadcrumb-item {
+  display: inline-block;
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  font-size: var(--fs-500);
+  font-weight: var(--fw-400);
+  color: var(--clr-accent-600);
+}
+
+.breadcrumb-list > * + * {
+  position: relative;
+  margin-left: 5vmax;
+}
+
+.breadcrumb-list > * + *::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -2rem;
+  width: 12px;
+  height: 20px;
+  background-image: url(../assets/img/icons/breadcrumb-arrow-icon.svg);
+}
+
+/* Authors section */
+
+.authors-section > * + * {
+  margin-top: 2rem;
+}
+
+.authors-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 2rem;
+}
+
+/* Info section */
+
+.info-section {
+  padding-block: 3rem;
+}
+
+.info-section > * + * {
+  margin-top: 3rem;
+}
+
+.info-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-header__title {
+  text-transform: uppercase;
+  font-size: var(--fs-700);
+  font-weight: var(--fw-600);
+}
+
+.info-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.info-block > * + * {
+  margin-top: 1rem;
+}
+
+.info-block p {
+  color: var(--clr-accent-500);
+}
+
+.info-block h3 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-600);
+}
+
+/* Books section */
+
+.genders {
+  padding-left: 0;
+  margin-block: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.genders > * {
+  flex-shrink: 0;
+}
+
+.gender-section h1 {
+  text-transform: uppercase;
+}
+
+.gender-section > * + * {
+  margin-top: 1rem;
+}
+
+.gender-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--clr-accent-100);
+  transition: box-shadow 300ms ease;
+  box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.gender-btn:hover {
+  box-shadow: 1px 3px 25px rgba(0, 0, 0, 0.25);
+}
+
+.gender-title {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-600);
+}
+
+.gender-info {
+  text-align: left;
+}
+
+.gender-info > * + * {
+  margin-top: 0.5rem;
+}
+
+.gender-book-count::after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 13px;
+  margin-left: 0.5rem;
+  background-image: url(../assets/img/icons/book-count-icon.svg);
+}
+
+.section-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-500);
+}
+
+.section-information__header p {
+  color: hsl(270, 1%, 71%);
+}
+
+.section-information__header h2 {
+  text-transform: uppercase;
+}
+
+.section-information__more-link {
+  text-decoration: none;
+  font-weight: var(--fw-600);
+  color: var(--clr-primary-400);
+}
+
+.section-information__more-link::after {
+  content: "";
+  margin-left: 0.75rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../assets/img/icons/arrow-icon.svg);
+  width: 12px;
+  height: 19px;
+}
+
+.book {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.book-top {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.book-top > img {
+  width: 100%;
+  aspect-ratio: 1.88 / 3;
+}
+
+.media-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 14%;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.book-list {
+  padding-left: 0;
+  margin-block: 0;
+}
+.books-section > * + * {
+  margin-top: 1rem;
+}
+
+.book-rating {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.book h3 {
+  font-size: var(--fs-400);
+}
+
+.book p {
+  font-weight: var(--fw-500);
+  color: var(--clr-secondary-400);
+}
+
+/* Rating section */
+
+.rating-section > * + * {
+  margin-top: 1rem;
+}
+
 /* Page footer */
 
 footer {
+  margin-top: 2rem;
   padding-block: 2rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
