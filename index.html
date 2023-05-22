@@ -24,11 +24,11 @@
             aria-placeholder="Buscar por libro o autor"
           />
         </div>
-        <a class="header-session-link" href="templates/login.html">Log in</a
-        ><span class="header-session-link--deco"> // </span
-        ><a class="header-session-link" href="templates/register.html"
-          >Sign up</a
-        >
+        <button id="open-login-dialog" class="header-session-btn">Log in</button
+        ><span class="header-session-btn--deco"> // </span
+        ><button id="open-register-dialog" class="header-session-btn">
+          Sign up
+        </button>
       </div>
       <nav class="page-nav">
         <ul class="page-nav-links" role="list">
@@ -717,5 +717,48 @@
         </div>
       </div>
     </footer>
+    <dialog id="login-dialog" class="registration">
+      <button class="registration__close-btn" id="close-login-dialog">X</button>
+      <h3>Inicia sesión</h3>
+      <p>
+        Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
+      </p>
+      <div class="input-box">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" placeholder="Ej. robcmartin" />
+      </div>
+      <div class="input-box">
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" placeholder="*************" />
+      </div>
+      <button class="btn btn-primary registration__btn">Inicia sesión</button>
+      <div class="registration-info-text">
+        <span>¿Aún no tienes una cuenta? </span
+        ><a href="register.html">Regístrate</a>
+      </div>
+    </dialog>
+    <dialog id="register-dialog" class="registration">
+      <button class="registration__close-btn" id="close-register-dialog">
+        X
+      </button>
+      <h3>Regístrate</h3>
+      <p>
+        Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
+      </p>
+      <div class="input-box">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" placeholder="Ej. robcmartin" />
+      </div>
+      <div class="input-box">
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass" placeholder="*************" />
+      </div>
+      <button class="btn btn-primary registration__btn">Regístrate</button>
+      <div class="registration-info-text">
+        <span>¿Ya tienes una cuenta? </span
+        ><a href="login.html">Inicia sesión</a>
+      </div>
+    </dialog>
+    <script src="../js/modals.js"></script>
   </body>
 </html>

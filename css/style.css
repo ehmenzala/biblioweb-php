@@ -211,14 +211,17 @@ header.container > * + * {
   background-image: url(../assets/img/icons/search-icon.svg);
 }
 
-.header-session-link {
+.header-session-btn {
+  border: none;
   font-weight: var(--fw-600);
   text-decoration: none;
   text-transform: uppercase;
+  background-color: transparent;
   color: hsl(0, 0%, 29%);
+  cursor: pointer;
 }
 
-.header-session-link--deco {
+.header-session-btn--deco {
   margin-inline: 5px;
   color: var(--clr-accent-600);
 }
@@ -376,6 +379,9 @@ header.container > * + * {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 2rem;
+}
+.author {
+  text-align: center;
 }
 
 /* Info section */
@@ -637,20 +643,41 @@ footer .container {
   background-color: var(--clr-accent-100);
 }
 
+.registration::backdrop {
+  transition: backdrop-filter 300ms ease-in;
+  backdrop-filter: blur(0px);
+}
+
+.registration:hover::backdrop {
+  backdrop-filter: blur(3px);
+}
+
+.registration__btn {
+  margin-inline: auto;
+}
+
+.registration__close-btn {
+  display: block;
+  margin-left: auto;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  font-weight: var(--fw-600);
+  border: 2px solid var(--clr-accent-900);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .registration span,
 .registration a,
 .registrationpa {
   font-size: var(--fs-200);
 }
 
-.registration h1 {
+.registration h3 {
   font-size: var(--fs-700);
   text-transform: uppercase;
   color: var(--clr-accent-900);
-}
-
-.registration button {
-  margin-inline: auto;
 }
 
 .registration label,
