@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Biblioweb: Detalle Libro</title>
+    <link rel="stylesheet" href="../css/styleDetalle-Libro.css">
+    
   </head>
   <body>
     <header class="container">
@@ -45,7 +47,7 @@
       </nav>
     </header>
     <main>
-      <nav aria-label="breadcrumbs">
+      <nav aria-label="breadcrumbs" class="container nav-breadcrumbs">
         <ol
           class="breadcrumb-list"
           role="list"
@@ -68,7 +70,7 @@
           </li>
         </ol>
       </nav>
-      <section class="container">
+      <section class="container section-detalle">
         <div class="general-info-section">
           <div class="book-info-wrapper">
             <img
@@ -76,29 +78,29 @@
               alt="Portada del libro"
             />
             <div class="book-info">
-              <h1 id="book-title">Don Quijote</h1>
-              <h2 id="book-author">Miguel de Cervantes</h2>
+              <h1 id="book-title" class="book-title">Don Quijote</h1>
+              <h2 id="book-author" class="book-author">Miguel de Cervantes</h2>
               <div class="book-info-item">
                 <span>Año de publicación: </span>
-                <span id="published-date">2020</span>
+                <span id="published-date" class="book-property">2020 </span>
               </div>
               <div class="book-info-item">
                 <span>Género: </span>
-                <span id="gender">Novela</span>
+                <span id="gender" class="book-property">Novela</span>
               </div>
               <div class="book-info-item">
                 <span>Número de páginas: </span>
-                <span id="number-of-pages">1000</span>
+                <span id="number-of-pages" class="book-property">1000</span>
               </div>
               <div class="book-info-item">
                 <span>Idioma: </span>
-                <span id="language">Español</span>
+                <span id="language" class="book-property">Español</span>
               </div>
               <div class="book-info-item">
                 <span>Idioma original: </span>
-                <span id="original-language">Español</span>
+                <span id="original-language" class="book-property">Español</span>
               </div>
-              <button>Lee el libro</button>
+              <button class="btn btn-primary" >Lee el libro</button>
             </div>
           </div>
           <div class="rating-stars">
@@ -153,7 +155,7 @@
           leap into electronic typesetting.
         </p>
       </section>
-      <section class="container">
+      <section class="container section-info">
         <div class="info-header">
           <h2 class="section-title">Lee cómodamente donde quieras</h2>
           <img
@@ -242,11 +244,11 @@
         </div>
         <div class="footer-link">
           <h4 class="footer-link__title">Acerca del registro</h4>
-          <a class="footer-link__contact-btn" href="#">8 (025) 752-33-03</a>
+          <a class="btn btn-primary" href="#">8 (025) 752-33-03</a>
         </div>
         <div class="footer-link">
           <h4 class="footer-link__title">Síguenos</h4>
-          <ul class="footer-link__link-list">
+          <ul class="footer-link__link-list iconos">
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
