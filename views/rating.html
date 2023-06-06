@@ -427,46 +427,84 @@
       </div>
     </footer>
     <dialog id="login-dialog" class="registration">
-      <button class="registration__close-btn" id="close-login-dialog">X</button>
-      <h3>Inicia sesión</h3>
-      <p>
-        Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
-      </p>
-      <div class="input-box">
-        <label for="username">Usuario</label>
-        <input type="text" id="username" placeholder="Ej. robcmartin" />
-      </div>
-      <div class="input-box">
-        <label for="pass">Contraseña</label>
-        <input type="password" id="pass" placeholder="*************" />
-      </div>
-      <button class="btn btn-primary registration__btn">Inicia sesión</button>
-      <div class="registration-info-text">
-        <span>¿Aún no tienes una cuenta? </span
-        ><a href="register.html">Regístrate</a>
-      </div>
+      <form action="../process-login.php" method="post">
+        <button
+          type="button"
+          class="registration__close-btn"
+          id="close-login-dialog"
+        >
+          X
+        </button>
+        <h3>Inicia sesión</h3>
+        <p>
+          Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
+        </p>
+        <div class="input-box">
+          <label for="log-username">Usuario</label>
+          <input
+            type="text"
+            id="log-username"
+            name="log-username"
+            placeholder="Ej. robcmartin"
+          />
+        </div>
+        <div class="input-box">
+          <label for="log-pass">Contraseña</label>
+          <input
+            type="password"
+            id="log-pass"
+            name="log-pass"
+            placeholder="*************"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary registration__btn">
+          Inicia sesión
+        </button>
+        <div class="registration-info-text">
+          <span>¿Aún no tienes una cuenta? </span
+          ><a href="register.html">Regístrate</a>
+        </div>
+      </form>
     </dialog>
     <dialog id="register-dialog" class="registration">
-      <button class="registration__close-btn" id="close-register-dialog">
-        X
-      </button>
-      <h3>Regístrate</h3>
-      <p>
-        Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
-      </p>
-      <div class="input-box">
-        <label for="username">Usuario</label>
-        <input type="text" id="username" placeholder="Ej. robcmartin" />
-      </div>
-      <div class="input-box">
-        <label for="pass">Contraseña</label>
-        <input type="password" id="pass" placeholder="*************" />
-      </div>
-      <button class="btn btn-primary registration__btn">Regístrate</button>
-      <div class="registration-info-text">
-        <span>¿Ya tienes una cuenta? </span
-        ><a href="login.html">Inicia sesión</a>
-      </div>
+      <form action="../process-register.php" method="post">
+        <button
+          type="button"
+          class="registration__close-btn"
+          id="close-register-dialog"
+        >
+          X
+        </button>
+        <h3>Regístrate</h3>
+        <p>
+          Llena tus credenciales y adéntrate al maravilloso mundo de la lectura.
+        </p>
+        <div class="input-box">
+          <label for="reg-username">Usuario</label>
+          <input
+            type="text"
+            id="reg-username"
+            name="reg-username"
+            placeholder="Ej. robcmartin"
+          />
+        </div>
+        <div class="input-box">
+          <label for="reg-pass">Contraseña</label>
+          <input
+            type="password"
+            id="reg-pass"
+            name="reg-pass"
+            placeholder="*************"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary registration__btn">
+          Regístrate
+        </button>
+        <div class="registration-info-text">
+          <span>¿Ya tienes una cuenta? </span
+          ><a href="login.html">Inicia sesión</a>
+        </div>
+      </form>
     </dialog>
     <script src="../js/modals.js"></script>
   </body>
