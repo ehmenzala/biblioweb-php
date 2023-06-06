@@ -630,7 +630,7 @@ footer .container {
 
 /* Login & Register */
 
-.registration > * + * {
+.registration form > * + * {
   margin-top: 1rem;
 }
 
