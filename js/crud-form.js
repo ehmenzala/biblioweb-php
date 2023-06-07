@@ -17,40 +17,48 @@ function showErrorMessage(message) {
 }
 
 $form.addEventListener("submit", (e) => {
-  const id = document.getElementById("book-id");
-  const rating = document.getElementById("rating").value;
+  const $id = document.getElementById("book-id");
+  const $rating = document.getElementById("rating");
   const $description = document.getElementById("description");
   const $fragment = document.getElementById("fragment");
 
-  const idIsReadOnly = id.hasAttribute("readonly");
+  const idIsReadOnly = $id.hasAttribute("readonly");
   const descriptionHasLessThan550Chars = $description.value.length <= 550;
   const fragmentHasLessThan350Chars = $fragment.value.length <= 350;
   const ratingIsBetweenZeroAndFive =
-    parseInt(rating) >= 0 && parseInt(rating) <= 5;
+    parseInt($rating.value) >= 0 && parseInt($rating.value) <= 5;
 
   if (!idIsReadOnly) {
     e.preventDefault();
     showErrorMessage("El ID debe ser de solo lectura. Recarga la página.");
+    $id.setAttribute("aria-invalid", "true");
     return;
   }
+  $id.setAttribute("aria-invalid", "false");
 
   if (!ratingIsBetweenZeroAndFive) {
     e.preventDefault();
     showErrorMessage("El rating debe estar entre 0 y 5");
+    $rating.setAttribute("aria-invalid", "true");
     return;
   }
+  $rating.setAttribute("aria-invalid", "false");
 
   if (!descriptionHasLessThan550Chars) {
     e.preventDefault();
     showErrorMessage("La descripción debe tener como máximo 550 caracteres");
+    $description.setAttribute("aria-invalid", "true");
     return;
   }
+  $description.setAttribute("aria-invalid", "false");
 
   if (!fragmentHasLessThan350Chars) {
     e.preventDefault();
     showErrorMessage("El fragmento debe tener como máximo 350 caracteres");
+    $fragment.setAttribute("aria-invalid", "true");
     return;
   }
+  $fragment.setAttribute("aria-invalid", "false");
 
   showErrorMessage("");
 });

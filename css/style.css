@@ -823,6 +823,11 @@ footer .container {
   background-color: hsl(0, 0%, 90%);
 }
 
+.crud-form__field[aria-invalid="true"],
+.crud-form__field-area[aria-invalid="true"] {
+  border: 2px solid hsl(351, 100%, 27%);
+}
+
 .crud-form__field,
 .crud-form__field-area {
   padding: 0.75rem;
