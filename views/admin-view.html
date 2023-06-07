@@ -63,6 +63,7 @@
 
       <section class="container section admin-title-section">
         <h1>Administración</h1>
+        <p id="error-message" class="error-message"></p>
         <button
           class="crud-form__clean-btn"
           aria-label="Limpiar los campos de texto"
@@ -86,7 +87,12 @@
       </section>
 
       <section class="container section crud-section">
-        <form action="../process-crud-form.php" method="post" class="crud-form">
+        <form
+          action="../process-crud-form.php"
+          method="post"
+          class="crud-form"
+          id="crud-form"
+        >
           <div class="crud-form__actions">
             <figure class="crud-form__profile">
               <img
@@ -110,6 +116,7 @@
             <div class="admin-input-box">
               <label class="crud-form__label" for="book-id">ID de libro</label>
               <input
+                required
                 class="crud-form__field"
                 type="number"
                 id="book-id"
@@ -119,6 +126,7 @@
             <div class="admin-input-box">
               <label class="crud-form__label" for="rating">Rating</label>
               <input
+                required
                 class="crud-form__field"
                 type="number"
                 name="rating"
@@ -132,6 +140,7 @@
                 >Título del libro</label
               >
               <input
+                required
                 class="crud-form__field"
                 type="text"
                 name="book-title"
@@ -141,6 +150,7 @@
             <div class="admin-input-box">
               <label class="crud-form__label" for="genre">Género</label>
               <input
+                required
                 class="crud-form__field"
                 type="text"
                 name="genre"
@@ -152,6 +162,7 @@
                 >Año de publicación</label
               >
               <input
+                required
                 class="crud-form__field"
                 type="number"
                 name="publish-date"
@@ -163,6 +174,7 @@
                 >Número de páginas</label
               >
               <input
+                required
                 class="crud-form__field"
                 type="number"
                 name="page-number"
@@ -172,6 +184,7 @@
             <div class="admin-input-box">
               <label class="crud-form__label" for="language">Idioma</label>
               <input
+                required
                 class="crud-form__field"
                 type="text"
                 name="language"
@@ -183,6 +196,7 @@
                 >Idioma original</label
               >
               <input
+                required
                 class="crud-form__field"
                 type="text"
                 name="original-language"
@@ -191,9 +205,10 @@
             </div>
             <div class="admin-input-box">
               <label class="crud-form__label" for="description"
-                >Descripción</label
+                >Descripción - <span id="desc-chars">0</span></label
               >
               <textarea
+                required
                 class="crud-form__field-area"
                 name="description"
                 id="description"
@@ -201,8 +216,11 @@
               ></textarea>
             </div>
             <div class="admin-input-box">
-              <label class="crud-form__label" for="fragment">Fragmento</label>
+              <label class="crud-form__label" for="fragment"
+                >Fragmento - <span id="fragment-chars">0</span></label
+              >
               <textarea
+                required
                 class="crud-form__field-area"
                 name="fragment"
                 id="fragment"
