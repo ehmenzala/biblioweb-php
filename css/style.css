@@ -150,6 +150,11 @@ textarea {
   border: 1px solid var(--clr-primary-400);
 }
 
+.error-message {
+  color: red;
+  font-weight: var(--fw-600);
+}
+
 /* General styling */
 
 body {
@@ -855,4 +860,10 @@ footer .container {
 
 .actions__btn:nth-child(even) {
   background-color: hsl(261, 100%, 94%);
+}
+
+@media screen and (max-width: 50.7em) {
+  .crud-form {
+    grid-template-columns: 1fr;
+  }
 }
