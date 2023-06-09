@@ -674,6 +674,17 @@ footer .container {
   cursor: pointer;
 }
 
+.registration__cta-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: inline;
+  font-size: var(--fs-200);
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+}
+
 .registration span,
 .registration a,
 .registrationpa {
@@ -715,10 +726,6 @@ footer .container {
 
 .registration input {
   border: 2px solid black;
-}
-
-.registration a {
-  color: inherit;
 }
 
 /* Admin section */
