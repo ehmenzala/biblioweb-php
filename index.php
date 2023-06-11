@@ -2,17 +2,16 @@
 
 session_start();
 
-$routes = [
-  '/biblioweb/' => 'views/index.html',
-  '/biblioweb/libros/' => 'views/libros.html',
-  '/biblioweb/autores/' => 'views/autores.html',
-  '/biblioweb/rating/' => 'views/rating.html',
-  '/biblioweb/admin/' => 'views/admin-view.html',
-];
+require 'router/Router.php';
 
-if (array_key_exists($_SERVER['REQUEST_URI'], $routes)) {
-  require $routes[$_SERVER['REQUEST_URI']];
-} else {
-  http_response_code(404);
-  echo 'NO SE ENCUENTRAAA';
-}
+$router = new Router();
+$uri = $_SERVER['REQUEST_URI'];
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+
+$router->get('/biblioweb/', 'views/index.html');
+$router->get('/biblioweb/libros/', 'views/libros.html');
+$router->get('/biblioweb/autores/', 'views/autores.html');
+$router->get('/biblioweb/rating/', 'views/rating.html');
+$router->get('/biblioweb/admin/', 'views/admin-view.html');
+
+$router->route($uri, $method);
