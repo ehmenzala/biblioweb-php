@@ -42,6 +42,6 @@ class Router {
 
   private function abort($code = 404) {
     http_response_code($code);
-    require "views/{$code}.html";
+    require "src/views/{$code}.html";
   }
 }
