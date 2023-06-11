@@ -66,6 +66,7 @@ CREATE TABLE usuario
 	correo               VARCHAR(30) NOT NULL,
 	nombre_usuario       VARCHAR(30) NOT NULL,
 	contrasenia          VARCHAR(64) NOT NULL,
+	rol                  VARCHAR(20) NOT NULL,
 	PRIMARY KEY (id_usuario)
 );
 
