@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Biblioweb: Página de libros</title>
-    <link rel="stylesheet" href="/biblioweb/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biblioweb: La bibliotéca virtual al alcance de un clic</title>
+    <link rel="stylesheet" href="/biblioweb/public/css/style.css" />
   </head>
   <body>
     <header class="container">
       <div class="header-top">
         <a href="/biblioweb/">
           <img
-            src="/biblioweb/assets/img/logo-desktop.png"
+            src="/biblioweb/public/assets/img/logo-desktop.png"
             alt="Logo de Biblioweb: Libro abierto por la mitad con partículas desvaneciéndose del lado derecho"
           />
         </a>
@@ -33,7 +33,7 @@
       <nav class="page-nav">
         <ul class="page-nav-links" role="list">
           <li class="page-nav-item">
-            <a class="page-nav-link active" href="/biblioweb/libros/">Libros</a>
+            <a class="page-nav-link" href="/biblioweb/libros/">Libros</a>
           </li>
           <li class="page-nav-item">
             <a class="page-nav-link" href="/biblioweb/autores/">Autores</a>
@@ -45,120 +45,102 @@
       </nav>
     </header>
     <main>
-      <nav aria-label="breadcrumbs" class="container section breadcrumbs">
-        <ol class="breadcrumb-list" role="list">
-          <li class="breadcrumb-item">
+      <section class="container hero-section section">
+        <div>
+          <h1 class="hero-section__title">Biblioteca virtual</h1>
+          <p class="hero-section__text">
+            lee cualquiera de nuestros libros al registrarte
+          </p>
+          <div class="hero-section__information">
+            <div class="info-item">
+              <img
+                src="/biblioweb/public/assets/img/icons/book-icon.svg"
+                alt="Ícono vectorial de libro"
+              />
+              <p class="info-item__stat">10 000</p>
+              <p class="info-item__title">Libros</p>
+            </div>
+            <div class="info-item">
+              <img
+                src="/biblioweb/public/assets/img/icons/headphones-icon.svg"
+                alt="Ícono vectorial de audífonos"
+              />
+              <p class="info-item__stat">5 000</p>
+              <p class="info-item__title">Audios</p>
+            </div>
+            <div class="info-item">
+              <img
+                src="/biblioweb/public/assets/img/icons/star-icon.svg"
+                alt="Ícono vectorial de estrella"
+              />
+              <p class="info-item__stat">50</p>
+              <p class="info-item__title">Por semana</p>
+            </div>
+            <div class="info-item">
+              <img
+                src="/biblioweb/public/assets/img/icons/puzzle-icon.svg"
+                alt="Ícono vectorial de pieza rompecabezas"
+              />
+              <p class="info-item__stat">Clasificados</p>
+              <p class="info-item__title">Todos los días</p>
+            </div>
+          </div>
+          <div class="hero-section__links">
             <a
-              class="breadcrumb-link"
-              href="/biblioweb/libros/"
-              aria-current="location"
-              >Libros</a
+              class="hero-section__link btn btn-primary"
+              href="/biblioweb/views/register.html"
+              >Registrarse</a
             >
-          </li>
-        </ol>
-      </nav>
-      <section class="container section gender-section">
-        <h1>Géneros</h1>
-        <ul role="list" class="genders">
-          <li class="gender-item">
-            <button class="gender-btn">
-              <div class="gender-info">
-                <h3 class="gender-title">Fantasía</h3>
-                <p class="gender-book-count">55</p>
-              </div>
-              <img
-                src="/biblioweb/assets/img/icons/wizard-hat-icon.svg"
-                alt="Gorro de mágico estampado con una luna y dos estrellas con estrellas voladoras alrededor de él."
-              />
-            </button>
-          </li>
-          <li class="gender-item">
-            <button class="gender-btn">
-              <div class="gender-info">
-                <h3 class="gender-title">Poesía</h3>
-                <p class="gender-book-count">12</p>
-              </div>
-              <img
-                src="/biblioweb/assets/img/icons/wizard-hat-icon.svg"
-                alt="Gorro de mágico estampado con una luna y dos estrellas con estrellas voladoras alrededor de él."
-              />
-            </button>
-          </li>
-          <li class="gender-item">
-            <button class="gender-btn">
-              <div class="gender-info">
-                <h3 class="gender-title">Cuento</h3>
-                <p class="gender-book-count">79</p>
-              </div>
-              <img
-                src="/biblioweb/assets/img/icons/wizard-hat-icon.svg"
-                alt="Gorro de mágico estampado con una luna y dos estrellas con estrellas voladoras alrededor de él."
-              />
-            </button>
-          </li>
-          <li class="gender-item">
-            <button class="gender-btn">
-              <div class="gender-info">
-                <h3 class="gender-title">Infantiles</h3>
-                <p class="gender-book-count">66</p>
-              </div>
-              <img
-                src="/biblioweb/assets/img/icons/wizard-hat-icon.svg"
-                alt="Gorro de mágico estampado con una luna y dos estrellas con estrellas voladoras alrededor de él."
-              />
-            </button>
-          </li>
-          <li class="gender-item">
-            <button class="gender-btn">
-              <div class="gender-info">
-                <h3 class="gender-title">Novela romántica</h3>
-                <p class="gender-book-count">31</p>
-              </div>
-              <img
-                src="/biblioweb/assets/img/icons/wizard-hat-icon.svg"
-                alt="Gorro de mágico estampado con una luna y dos estrellas con estrellas voladoras alrededor de él."
-              />
-            </button>
-          </li>
-        </ul>
+            <a class="hero-section__link btn btn-secondary" href="#"
+              >Libro de prueba</a
+            >
+          </div>
+        </div>
+        <div>
+          <img
+            src="/biblioweb/public/assets/img/hero-image-desktop.png"
+            alt="Ilustración de una pila de libros junto a una pluma y una maceta."
+          />
+        </div>
       </section>
-      <!-- For demo only -->
-      <section class="container section books-section">
+      <section class="container section best-genders-section">
         <div class="section-information">
           <div class="section-information__header">
-            <h2>Fantasía</h2>
-            <p>Los mejores libros de fantasía que puedes encontrar.</p>
+            <h2>Lo mejor en todos los géneros</h2>
+            <p>
+              Sumérgete en un nuevo mundo que ha conquistado los corazones de
+              millones.
+            </p>
           </div>
           <a class="section-information__more-link" href="#">Más</a>
         </div>
 
-        <!-- This will be initially empty. User must select a cataegory from above to render books -->
         <ul class="book-list media-scroller" role="list">
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -169,90 +151,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <img
-              src="/biblioweb/assets/img/portada-book.jpg"
-              alt="Portada del libro."
-            />
-            <div class="book-rating">
-              <img
-                src="/biblioweb/assets/img/icons/rating-star.svg"
-                alt="Estrella de rating"
-              />
-              <img
-                src="/biblioweb/assets/img/icons/rating-star.svg"
-                alt="Estrella de rating"
-              />
-              <img
-                src="/biblioweb/assets/img/icons/rating-star.svg"
-                alt="Estrella de rating"
-              />
-              <img
-                src="/biblioweb/assets/img/icons/rating-star.svg"
-                alt="Estrella de rating"
-              />
-              <img
-                src="/biblioweb/assets/img/icons/rating-star.svg"
-                alt="Estrella de rating"
-              />
-            </div>
-            <h3>Don Quijote</h3>
-            <p>Miguel de Cervantes Saavedrea</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -263,28 +183,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -295,28 +215,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -327,28 +247,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -359,28 +279,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -391,28 +311,73 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+              </div>
+              <h3>Don Quijote</h3>
+            </div>
+            <p>Miguel de Cervantes</p>
+          </li>
+        </ul>
+      </section>
+      <section class="container section best-books-section">
+        <div class="section-information">
+          <div class="section-information__header">
+            <h2>Nuevos mejores libros</h2>
+            <p>
+              Agrega los mejores libros a tu lista para que note los pierdas.
+            </p>
+          </div>
+          <a class="section-information__more-link" href="#">Más</a>
+        </div>
+        <ul class="book-list media-scroller" role="list">
+          <li class="book">
+            <div class="book-top">
+              <img
+                src="/biblioweb/public/assets/img/portada-book.jpg"
+                alt="Portada del libro."
+              />
+              <div class="book-rating">
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -423,28 +388,28 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -455,28 +420,156 @@
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/assets/img/portada-book.jpg"
+                src="/biblioweb/public/assets/img/portada-book.jpg"
                 alt="Portada del libro."
               />
               <div class="book-rating">
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
                 <img
-                  src="/biblioweb/assets/img/icons/rating-star.svg"
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+              </div>
+              <h3>Don Quijote</h3>
+            </div>
+            <p>Miguel de Cervantes</p>
+          </li>
+          <li class="book">
+            <div class="book-top">
+              <img
+                src="/biblioweb/public/assets/img/portada-book.jpg"
+                alt="Portada del libro."
+              />
+              <div class="book-rating">
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+              </div>
+              <h3>Don Quijote</h3>
+            </div>
+            <p>Miguel de Cervantes</p>
+          </li>
+          <li class="book">
+            <div class="book-top">
+              <img
+                src="/biblioweb/public/assets/img/portada-book.jpg"
+                alt="Portada del libro."
+              />
+              <div class="book-rating">
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+              </div>
+              <h3>Don Quijote</h3>
+            </div>
+            <p>Miguel de Cervantes</p>
+          </li>
+          <li class="book">
+            <div class="book-top">
+              <img
+                src="/biblioweb/public/assets/img/portada-book.jpg"
+                alt="Portada del libro."
+              />
+              <div class="book-rating">
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+              </div>
+              <h3>Don Quijote</h3>
+            </div>
+            <p>Miguel de Cervantes</p>
+          </li>
+          <li class="book">
+            <div class="book-top">
+              <img
+                src="/biblioweb/public/assets/img/portada-book.jpg"
+                alt="Portada del libro."
+              />
+              <div class="book-rating">
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
+                  alt="Estrella de rating"
+                />
+                <img
+                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
               </div>
@@ -490,7 +583,7 @@
         <div class="info-header">
           <h2 class="info-header__title">Lee cómodamente donde quieras</h2>
           <img
-            src="/biblioweb/assets/img/logo-info-section.jpg"
+            src="/biblioweb/public/assets/img/logo-info-section.jpg"
             alt="Logo de Biblioweb: Libro abierto por la mitad con partículas desvaneciéndose del lado derecho"
           />
         </div>
@@ -588,7 +681,7 @@
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
-                  src="/biblioweb/assets/img/icons/instagram-icon.svg"
+                  src="/biblioweb/public/assets/img/icons/instagram-icon.svg"
                   alt="Ícono de Instagram"
                 />
               </a>
@@ -596,7 +689,7 @@
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
-                  src="/biblioweb/assets/img/icons/facebook-icon.svg"
+                  src="/biblioweb/public/assets/img/icons/facebook-icon.svg"
                   alt="Ícono de Facebook"
                 />
               </a>
@@ -604,7 +697,7 @@
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
-                  src="/biblioweb/assets/img/icons/youtube-icon.svg"
+                  src="/biblioweb/public/assets/img/icons/youtube-icon.svg"
                   alt="Ícono de YouTube"
                 />
               </a>
@@ -612,7 +705,7 @@
             <li class="footer-social-icon-wrapper">
               <a href="#">
                 <img
-                  src="/biblioweb/assets/img/icons/twitter-icon.svg"
+                  src="/biblioweb/public/assets/img/icons/twitter-icon.svg"
                   alt="Ícono de Twitter"
                 />
               </a>
@@ -722,6 +815,6 @@
         </div>
       </form>
     </dialog>
-    <script src="/biblioweb/js/modals.js"></script>
+    <script src="/biblioweb/public/js/modals.js"></script>
   </body>
 </html>
