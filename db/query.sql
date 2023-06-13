@@ -80,6 +80,7 @@ INSERT INTO `autor`(`nombre_completo`, `foto_perfil`) VALUES ('Austin Kleon','ht
 INSERT INTO `autor`(`nombre_completo`, `foto_perfil`) VALUES ('Cal Newport','https://api.dicebear.com/6.x/lorelei/svg?seed=calnewport');
 INSERT INTO `autor`(`nombre_completo`, `foto_perfil`) VALUES ('Adam Grant','https://api.dicebear.com/6.x/lorelei/svg?seed=adamgrant');
 
+INSERT INTO `autor`(`nombre_completo`, `foto_perfil`) VALUES ('Robert Stevenson','https://api.dicebear.com/6.x/lorelei/svg?seed=robertstevenson');
 
 /* ****************
   QUERIES TO INSERT
@@ -207,3 +208,61 @@ INSERT INTO `libro`(`id_genero`, `titulo`, `anio_publicacion`, `num_paginas`, `i
 INSERT INTO `libro`(`id_genero`, `titulo`, `anio_publicacion`, `num_paginas`, `idioma`, `idioma_original`, `descripcion`, `rating`, `fragmento`, `portada`) VALUES (7,'Deep Work', 2016, 304,'Inglés','Inglés','The ability to do deep work. Cal Newport\'s exciting new book is an introduction and guide to the kind of intense concentration in a distraction-free environment that results in fast, powerful learning and performance. Think of it as calisthenics for your mind-and start your exercise program today',5,'Deep work is the ability to focus without distraction on a cognitively demanding task. In a world filled with interruptions and attention fragmentation, mastering deep work has become more valuable than ever. It\'s the key to producing high-value results and achieving success in an increasingly competitive world.', '/biblioweb/public/assets/deep-work.jpg');
 
 INSERT INTO `libro`(`id_genero`, `titulo`, `anio_publicacion`, `num_paginas`, `idioma`, `idioma_original`, `descripcion`, `rating`, `fragmento`, `portada`) VALUES (7,'Originales', 2016, 352,'Español','Inglés','¿Cómo generar nuevas ideas sin temer romper con lo establecido? ¿De qué forma defender iniciativas que van en contra de la corriente, oponerse a la conformidad y a la tradición? A partir de casos concretos, Adam Grant explora qué ocurrió detrás de situaciones realmente disruptivas que cambiaron en algo el curso de un proyecto, una empresa o una cultura entera. Nos enseña cómo reconocer una idea buena y, ante todo, la persistencia que se necesita para convertirla en realidad cuando se trata de algo que contraviene lo aceptado por la mayoría.',5,'Los originales son aquellos que desafían el statu quo y generan ideas frescas. No temen al rechazo y persisten a pesar de la adversidad. La clave para ser un original radica en tomar riesgos calculados, buscar múltiples perspectivas y mantener una mentalidad abierta. Son aquellos que cambian el mundo con sus ideas y acciones audaces.', '/biblioweb/public/assets/originales.jpg');
+
+-- RELACION AUTOR_LIBRO
+
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (1,1,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (2,2,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (3,3,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (4,4,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (5,5,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (6,6,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (7,7,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (4,8,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (8,9,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (9,10,1);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (10,11,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (11,12,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (12,13,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (13,14,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (14,15,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (14,16,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (15,17,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (16,18,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (17,19,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (18,20,2);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (19,21,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (20,22,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (21,23,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (22,24,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (23,25,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (24,26,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (25,27,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (26,28,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (27,29,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (27,30,3);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (28,31,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (29,32,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (30,33,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (31,34,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (32,35,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (33,36,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (34,37,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (35,38,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (36,39,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (37,40,4);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (38,41,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (39,42,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (52,43,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (40,44,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (41,45,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (42,46,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (43,47,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (44,48,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (45,49,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (46,50,6);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (47,51,7);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (48,52,7);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (49,53,7);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (50,54,7);
+INSERT INTO `autor_libro`(`id_autor`, `id_libro`, `id_genero`) VALUES (51,55,7);
