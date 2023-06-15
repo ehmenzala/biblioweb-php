@@ -22,7 +22,6 @@ class Router {
 
   public function route($uri, $method)  {
 
-    $found = false;
     foreach ($this->routes as $route) {
       if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
         return require $route['controller'];
