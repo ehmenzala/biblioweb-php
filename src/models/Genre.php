@@ -3,19 +3,19 @@
 class Genre {
 
   private $id;
-  private $nombre;
+  private $name;
 
-  function __construct($id, $nombre) {
+  function __construct($id, $name) {
     $this->id = $id;
-    $this->nombre = $nombre;
+    $this->name = $name;
   }
 
   public function get_id() {
     return $this->id;
   }
 
-  public function get_nombre() {
-    return $this->nombre;
+  public function get_name() {
+    return $this->name;
   }
 
 }
