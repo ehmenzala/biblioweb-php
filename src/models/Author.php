@@ -3,25 +3,25 @@
 class Author {
   
   private $id;
-  private $nombre_completo;
-  private $perfil;
+  private $full_name;
+  private $profile;
 
-  function __construct($id, $nombre_completo, $perfil) {
+  function __construct($id, $full_name, $profile) {
     $this->id = $id;
-    $this->nombre_completo = $nombre_completo;
-    $this->perfil = $perfil;
+    $this->full_name = $full_name;
+    $this->profile = $profile;
   }
 
   public function get_id() {
     return $this->id;
   }
   
-  public function get_nombre_completo() {
+  public function get_full_name() {
     return $this->nombre_completo;
   }
 
-  public function get_perfil() {
-    return $this->perfil;
+  public function get_profile() {
+    return $this->profile;
   }
 
 }
