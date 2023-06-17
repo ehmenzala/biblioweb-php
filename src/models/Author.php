@@ -17,7 +17,7 @@ class Author {
   }
   
   public function get_full_name() {
-    return $this->nombre_completo;
+    return $this->full_name;
   }
 
   public function get_profile() {
