@@ -2,7 +2,7 @@
 
 interface AuthorRepository {
 
-  public function get_all();
+    public function get_all();
 
 }
 

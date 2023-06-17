@@ -1,27 +1,27 @@
 <?php
 
 class Author {
-  
-  private $id;
-  private $full_name;
-  private $profile;
 
-  function __construct($id, $full_name, $profile) {
-    $this->id = $id;
-    $this->full_name = $full_name;
-    $this->profile = $profile;
-  }
+    private $id;
+    private $full_name;
+    private $profile;
 
-  public function get_id() {
-    return $this->id;
-  }
-  
-  public function get_full_name() {
-    return $this->full_name;
-  }
+    function __construct($id, $full_name, $profile) {
+        $this->id = $id;
+        $this->full_name = $full_name;
+        $this->profile = $profile;
+    }
 
-  public function get_profile() {
-    return $this->profile;
-  }
+    public function get_id() {
+        return $this->id;
+    }
+
+    public function get_full_name() {
+        return $this->full_name;
+    }
+
+    public function get_profile() {
+        return $this->profile;
+    }
 
 }
