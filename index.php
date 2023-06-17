@@ -2,7 +2,20 @@
 
 session_start();
 
-require 'Router.php';
+const BASE_PATH = __DIR__;
+
+require BASE_PATH . '/Router.php';
+
+require BASE_PATH . '/src/utilities/Authenticator.php';
+
+require BASE_PATH . '/src/models/User.php';
+require BASE_PATH . '/src/models/Book.php';
+require BASE_PATH . '/src/models/Author.php';
+
+require BASE_PATH . '/src/services/MainService.php';
+require BASE_PATH . '/src/services/UserService.php';
+require BASE_PATH . '/src/services/BookService.php';
+require BASE_PATH . '/src/services/AuthorService.php';
 
 $router = new Router();
 $uri = $_SERVER['REQUEST_URI'];
