@@ -54,11 +54,11 @@ class Book implements JsonSerializable {
         return $this->id;
     }
 
-    public function get_genre(): string {
+    public function get_genre(): Genre {
         return $this->genre;
     }
 
-    public function get_author(): string {
+    public function get_author(): Author {
         return $this->author;
     }
 
