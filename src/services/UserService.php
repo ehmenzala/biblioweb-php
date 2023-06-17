@@ -10,10 +10,10 @@ class UserService extends MainService implements UserRepository {
 
     public function get_by_username_and_passwd($username, $passwd): User {
         $st = self::$db->prepare("
-      SELECT id_usuario, correo, nombre_usuario, contrasenia, rol
-      FROM usuario
-      WHERE nombre_usuario = :username AND contrasenia = :passwd
-    ");
+          SELECT id_usuario, correo, nombre_usuario, contrasenia, rol
+          FROM usuario
+          WHERE nombre_usuario = :username AND contrasenia = :passwd
+        ");
 
         $st->execute(array(
             'username' => $username,
