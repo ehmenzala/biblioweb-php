@@ -3,8 +3,9 @@
 class Book implements JsonSerializable {
 
   private $id;
-  private $title;
   private $genre;
+  private $author;
+  private $title;
   private $pub_year;
   private $no_pages;
   private $language;
@@ -13,11 +14,13 @@ class Book implements JsonSerializable {
   private $rating;
   private $fragment;
   private $cover;
+  private $views;
 
-  function __construct($id, $title, $genre, $pub_year, $no_pages, $language, $org_language, $description, $rating, $fragment, $cover) {
+  function __construct($id, $genre, $author, $title, $pub_year, $no_pages, $language, $org_language, $description, $rating, $fragment, $cover, $views) {
     $this->id = $id;
-    $this->title = $title;
     $this->genre = $genre;
+    $this->author = $author;
+    $this->title = $title;
     $this->pub_year = $pub_year;
     $this->no_pages = $no_pages;
     $this->language = $language;
@@ -26,6 +29,7 @@ class Book implements JsonSerializable {
     $this->rating = $rating;
     $this->fragment = $fragment;
     $this->cover = $cover;
+    $this->views = $views;
   }
 
   public function jsonSerialize() {
@@ -48,15 +52,19 @@ class Book implements JsonSerializable {
     return $this->id;
   }
 
-  public function get_title()  {
-    return $this->title;
-  }
-
   public function get_genre()  {
     return $this->genre;
   }
 
-  public function get_anio_publicacion()  {
+  public function get_author()  {
+    return $this->author;
+  }
+
+  public function get_title()  {
+    return $this->title;
+  }
+
+  public function get_pub_year()  {
     return $this->pub_year;
   }
 
@@ -86,6 +94,10 @@ class Book implements JsonSerializable {
 
   public function get_cover()  {
     return $this->cover;
+  }
+  
+  public function get_views()  {
+    return $this->views;
   }
 
 }
