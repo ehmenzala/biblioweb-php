@@ -4,19 +4,19 @@ class Router {
 
     private $routes = [];
 
-    public function get($uri, $controller) {
+    public function get($uri, $controller): void {
         $this->add($uri, $controller, 'GET');
     }
 
-    public function post($uri, $controller) {
+    public function post($uri, $controller): void {
         $this->add($uri, $controller, 'POST');
     }
 
-    public function put($uri, $controller) {
+    public function put($uri, $controller): void {
         $this->add($uri, $controller, 'PUT');
     }
 
-    public function delete($uri, $controller) {
+    public function delete($uri, $controller): void {
         $this->add($uri, $controller, 'DELETE');
     }
 
@@ -31,7 +31,7 @@ class Router {
         $this->abort();
     }
 
-    private function add($uri, $controller, $method) {
+    private function add($uri, $controller, $method): void {
         $this->routes[] = [
             'uri' => $uri,
             'controller' => $controller,
@@ -39,7 +39,7 @@ class Router {
         ];
     }
 
-    private function abort($code = 404) {
+    private function abort($code = 404): void {
         http_response_code($code);
         require "src/views/{$code}.html";
     }

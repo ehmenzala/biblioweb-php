@@ -8,10 +8,8 @@ class AuthorService extends MainService implements AuthorRepository {
         self::init($db);
     }
 
-    public function get_all() {
-        $st = self::$db->prepare("
-      SELECT * FROM autor
-    ");
+    public function get_all(): array {
+        $st = self::$db->prepare("SELECT * FROM autor");
         $st->execute();
         $results = $st->fetchAll();
         $authors = array_map(function ($result) {

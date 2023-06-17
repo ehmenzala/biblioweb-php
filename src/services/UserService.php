@@ -8,7 +8,7 @@ class UserService extends MainService implements UserRepository {
         self::init($db);
     }
 
-    public function get_by_username_and_passwd($username, $passwd) {
+    public function get_by_username_and_passwd($username, $passwd): User {
         $st = self::$db->prepare("
       SELECT id_usuario, correo, nombre_usuario, contrasenia, rol
       FROM usuario
@@ -31,11 +31,11 @@ class UserService extends MainService implements UserRepository {
         return $user;
     }
 
-    public function add($user) {
+    public function add(User $user): void {
         $statement = self::$db->prepare("
-      INSERT INTO usuario(correo, nombre_usuario, contrasenia, rol)
-      VALUES (:email, :username, :passwd, :role)
-    ");
+          INSERT INTO usuario(correo, nombre_usuario, contrasenia, rol)
+          VALUES (:email, :username, :passwd, :role)
+        ");
 
         $statement->execute(array(
                 'email' => $user->get_email(),

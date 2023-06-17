@@ -2,22 +2,22 @@
 
 interface BookRepository {
 
-    public function get_sorted_by_rating_desc();
+    public function get_sorted_by_rating_desc(): array;
 
-    public function get_sorted_by_creation_date_desc();
+    public function get_sorted_by_creation_date_desc(): array;
 
-    public function get_by_genre($genre_id);
+    public function get_by_genre_id(string $genre_id): array;
 
-    public function get_random_fragment();
+    public function get_random_fragment(): string;
 
-    public function get_all();
+    public function get_all(): array;
 
-    public function get($id);
+    public function get(string $id): Book;
 
-    public function add($book);
+    public function add(Book $book): void;
 
-    public function delete($id);
+    public function delete(string $id): void;
 
-    public function update($book);
+    public function update(Book $book): void;
 
 }

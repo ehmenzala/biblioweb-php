@@ -8,7 +8,7 @@ class User {
     private $passwd;
     private $role;
 
-    function __construct($id, $email, $username, $passwd, $role) {
+    function __construct(string $id, string $email, string $username, string $passwd, string $role) {
         $this->id = $id;
         $this->email = $email;
         $this->username = $username;
@@ -16,23 +16,23 @@ class User {
         $this->role = $role;
     }
 
-    public function get_id() {
+    public function get_id(): string {
         return $this->id;
     }
 
-    public function get_email() {
+    public function get_email(): string {
         return $this->email;
     }
 
-    public function get_username() {
+    public function get_username(): string {
         return $this->username;
     }
 
-    public function get_passwd() {
+    public function get_passwd(): string {
         return $this->passwd;
     }
 
-    public function get_role() {
+    public function get_role(): string {
         return $this->role;
     }
 }

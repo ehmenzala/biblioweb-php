@@ -16,7 +16,7 @@ class Book implements JsonSerializable {
     private $cover;
     private $views;
 
-    function __construct($id, $genre, $author, $title, $pub_year, $no_pages, $language, $org_language, $description, $rating, $fragment, $cover, $views) {
+    function __construct(string $id, Genre $genre, Author $author, string $title, string $pub_year, string $no_pages, string $language, string $org_language, string $description, string $rating, string $fragment, string $cover, string $views) {
         $this->id = $id;
         $this->genre = $genre;
         $this->author = $author;
@@ -50,55 +50,55 @@ class Book implements JsonSerializable {
         ];
     }
 
-    public function get_id() {
+    public function get_id(): string {
         return $this->id;
     }
 
-    public function get_genre() {
+    public function get_genre(): string {
         return $this->genre;
     }
 
-    public function get_author() {
+    public function get_author(): string {
         return $this->author;
     }
 
-    public function get_title() {
+    public function get_title(): string {
         return $this->title;
     }
 
-    public function get_pub_year() {
+    public function get_pub_year(): string {
         return $this->pub_year;
     }
 
-    public function get_no_pages() {
+    public function get_no_pages(): string {
         return $this->no_pages;
     }
 
-    public function get_language() {
+    public function get_language(): string {
         return $this->language;
     }
 
-    public function get_org_language() {
+    public function get_org_language(): string {
         return $this->org_language;
     }
 
-    public function get_description() {
+    public function get_description(): string {
         return $this->description;
     }
 
-    public function get_rating() {
+    public function get_rating(): string {
         return $this->rating;
     }
 
-    public function get_fragment() {
+    public function get_fragment(): string {
         return $this->fragment;
     }
 
-    public function get_cover() {
+    public function get_cover(): string {
         return $this->cover;
     }
 
-    public function get_views() {
+    public function get_views(): string {
         return $this->views;
     }
 
