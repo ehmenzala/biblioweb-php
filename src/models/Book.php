@@ -35,8 +35,8 @@ class Book implements JsonSerializable {
     public function jsonSerialize() {
         return [
             'id' => $this->id,
-            'genre' => $this->genre,
-            'author' => $this->author,
+            'genre' => $this->genre->get_name(),
+            'author' => $this->author->get_full_name(),
             'title' => $this->title,
             'pub_year' => $this->pub_year,
             'no_pages' => $this->no_pages,
