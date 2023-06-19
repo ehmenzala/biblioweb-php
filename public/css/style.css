@@ -25,7 +25,8 @@
 :root {
   --clr-primary-500: hsl(228, 33%, 61%);
   --clr-primary-400: hsl(260, 64%, 72%);
-  --clr-primary-200: hsl(276, 95%, 77%);
+  --clr-primary-300: hsl(276, 95%, 77%);
+  --clr-primary-200: hsl(260, 80%, 94%);
   --clr-primary-100: hsl(260, 29%, 94%);
   --clr-secondary-400: hsl(39, 92%, 61%);
   --clr-accent-900: hsl(257, 21%, 16%);
@@ -38,7 +39,7 @@
   --gradiend-primary-400: linear-gradient(
     to right,
     var(--clr-primary-500),
-    var(--clr-primary-200)
+    var(--clr-primary-300)
   );
 
   --fs-200: 0.875rem;
@@ -148,6 +149,31 @@ textarea {
   color: var(--clr-accent-600);
   background-color: transparent;
   border: 1px solid var(--clr-primary-400);
+}
+
+.btn-dashboard {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+  color: var(--clr-accent-600);
+  border-radius: 999px;
+  transition: background-color 200ms ease;
+}
+
+.btn-primary-dashboard {
+  --bg-color: var(--clr-primary-200);
+}
+
+.btn-secondary-dashboard {
+  --bg-color: hsl(0, 0%, 94%);
+}
+
+.btn-dashboard:hover,
+.btn-dashboard.active {
+  background-color: var(--bg-color);
+}
+
+.btn-secondary-dashboard.active {
 }
 
 .error-message {
@@ -728,7 +754,9 @@ footer .container {
   border: 2px solid black;
 }
 
-/* Admin section */
+/* **************************************** */
+/* Admin section - WILL PROBABLY BE DETELET */
+/* **************************************** */
 
 .admin-title-section {
   display: flex;
@@ -878,4 +906,79 @@ footer .container {
   .crud-form {
     grid-template-columns: 1fr;
   }
+}
+
+/* Dashboard */
+
+.dashboard-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header {
+  margin-top: -2rem; /* ew */
+  margin-bottom: 2rem;
+  padding-block: 1rem;
+  font-size: var(--fs-500);
+  background-color: var(--clr-accent-100);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.dashboard__links,
+.dashboard-header__links {
+  list-style-type: none;
+  padding-left: 0;
+  margin-block: 0;
+  display: flex;
+  gap: 21px;
+}
+
+.dashboard__link,
+.dashboard-header__link {
+  text-decoration: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile__img-container {
+  width: 2.25rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1px solid var(--clr-accent-900);
+  background-color: hsl(0, 0%, 85%);
+}
+
+.profile__welcome {
+  font-weight: var(--fw-600);
+}
+
+.dashboard__nav {
+  padding: 1rem;
+  font-size: var(--fs-500);
+  background-color: var(--clr-accent-100);
+  border-radius: 20px;
+}
+
+.dashboard-container > * + * {
+  margin-top: 2rem;
+}
+
+.dashboard {
+  columns: 3 350px;
+  column-gap: 21px;
+}
+
+.dashboard__card {
+  margin-bottom: 21px;
+  padding: 1rem;
+  background-color: var(--clr-accent-100);
+  border-radius: 20px;
+  break-inside: avoid;
 }
