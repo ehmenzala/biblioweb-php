@@ -45,4 +45,20 @@ class UserService extends MainService implements UserRepository {
         );
     }
 
+    public function get_all(): array {
+        $statement = self::$db->prepare("SELECT id_usuario, correo, nombre_usuario, contrasenia, rol FROM usuario");
+        $statement->execute();
+        $results = $statement->fetchAll();
+        $results = array_map(function ($result) {
+            return new User(
+                $result['id_usuario'],
+                $result['correo'],
+                $result['nombre_usuario'],
+                $result['contrasenia'],
+                $result['rol']
+            );
+        }, $results);
+        return $results;
+    }
+
 }
