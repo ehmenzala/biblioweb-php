@@ -7,8 +7,6 @@ const $usersBtn = document.getElementById("users-btn");
 
 const $buttons = [$resumeBtn, $bibliographyBtn, $usersBtn];
 
-console.log([...$bookCards, ...$userCards]);
-
 $resumeBtn.addEventListener("click", () => {
   cleanClassesFromButtons();
   $resumeBtn.classList.add("active");
