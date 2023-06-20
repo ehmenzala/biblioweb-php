@@ -130,6 +130,10 @@ textarea {
   margin-inline: auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .btn {
   display: block;
   border: none;
@@ -158,6 +162,7 @@ textarea {
   color: var(--clr-accent-600);
   border-radius: 999px;
   transition: background-color 200ms ease;
+  cursor: pointer;
 }
 
 .btn-primary-dashboard {

@@ -43,6 +43,7 @@
               <a
                 class="btn-dashboard btn-primary-dashboard dashboard-header__link active"
                 href="/biblioweb/dashboard/"
+                aria-current="location"
                 >Dashboard</a
               >
             </li>
@@ -65,21 +66,27 @@
         <ul class="dashboard__links">
           <li>
             <a
-              href="/biblioweb/dashboard/"
+              role="tab"
+              aria-selected="true"
+              id="resume-btn"
               class="btn-dashboard btn-secondary-dashboard dashboard__link active"
               >Resumen</a
             >
           </li>
           <li>
             <a
-              href="/biblioweb/dashboard/bibliografia/"
+              role="tab"
+              aria-selected="false"
+              id="bibliography-btn"
               class="btn-dashboard btn-secondary-dashboard dashboard__link"
               >Bibliografía</a
             >
           </li>
           <li>
             <a
-              href="/biblioweb/dashboard/usuarios/"
+              role="tab"
+              aria-selected="false"
+              id="users-btn"
               class="btn-dashboard btn-secondary-dashboard dashboard__link"
               >Usuarios</a
             >
@@ -87,33 +94,33 @@
         </ul>
       </nav>
       <section class="dashboard">
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-user-info-card>
           <div>
             <h2>Usuarios registrados</h2>
             <p>Total de usuarios registrados en Biblioweb.</p>
             <p id="user-count" class="big-text"></p>
           </div>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-book-info-card>
           <div>
             <h2>Relación de libros por género</h2>
             <p>Todos los libros de Biblioweb ordenados por género.</p>
             <canvas id="books-by-genre"></canvas>
           </div>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-book-info-card>
           <div>
             <h2>Relación de libros por rating</h2>
             <p>Todos los libros de Biblioweb ordenados por rating.</p>
             <canvas id="books-by-rating"></canvas>
           </div>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-book-info-card>
           <h2>Libros</h2>
           <p>Todos los libros almacenados en Biblioweb.</p>
           <p id="book-count" class="big-text"></p>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-user-info-card>
           <h2>Relación de usuarios por rol</h2>
           <p>
             Los usuarios de Biblioweb solo pueden tener el rol de usuario o
@@ -121,12 +128,12 @@
           </p>
           <canvas id="users-by-role"></canvas>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-book-info-card>
           <h2>Gestionar libros</h2>
           <p>Gestione los libros de Biblioweb desde un solo lugar.</p>
           <button id="open-books-crud">Gestionar libros</button>
         </article>
-        <article class="dashboard__card">
+        <article class="dashboard__card" data-user-info-card>
           <div>
             <h2>Gestionar usuarios</h2>
             <p>Gestione los usuarios de Biblioweb desde un solo lugar.</p>
@@ -137,4 +144,5 @@
     </main>
   </body>
   <script src="/biblioweb/public/js/dashboard-charts.js"></script>
+  <script src="/biblioweb/public/js/dashboard-navigation.js"></script>
 </html>
