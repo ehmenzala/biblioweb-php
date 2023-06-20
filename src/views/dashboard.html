@@ -139,6 +139,239 @@
       </section>
     </main>
   </body>
+  <dialog class="form-modal" id="books-dialog">
+    <h2 class="form-modal__title">
+      Gestionar libros -
+      <span class="form-modal__book-status" id="book-status">Creando...</span>
+    </h2>
+    <p>Gestiona los libros desde un solo lugar.</p>
+    <form action="#" method="post" id="book-form" class="dashboard-form">
+      <div class="dashboard-form__field-group">
+        <label for="book-id" class="dashboard-form__label">ID</label>
+        <input
+          type="text"
+          name="book-id"
+          id="book-id"
+          class="dashboard-form__field"
+          readonly
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="rating" class="dashboard-form__label">Rating</label>
+        <input
+          class="dashboard-form__field"
+          id="rating"
+          type="number"
+          min="1"
+          max="5"
+          name="rating"
+          placeholder="Ej. 5"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="title" class="dashboard-form__label">Título</label>
+        <input
+          class="dashboard-form__field"
+          id="title"
+          type="text"
+          name="title"
+          placeholder="Ej. El Principito"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="pub_year" class="dashboard-form__label"
+          >Año de publicación</label
+        >
+        <input
+          class="dashboard-form__field"
+          id="pub_year"
+          type="number"
+          name="pub_year"
+          placeholder="Ej. 1943"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="no-pages" class="dashboard-form__label"
+          >Número de páginas</label
+        >
+        <input
+          class="dashboard-form__field"
+          id="no-pages"
+          type="number"
+          name="no-pages"
+          placeholder="Ej. 120"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="language" class="dashboard-form__label">Idioma</label>
+        <input
+          class="dashboard-form__field"
+          id="language"
+          type="text"
+          name="language"
+          placeholder="Ej. Español"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="org-language" class="dashboard-form__label"
+          >Idioma original</label
+        >
+        <input
+          class="dashboard-form__field"
+          id="org-language"
+          type="text"
+          name="org-language"
+          placeholder="Ej. Francés"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="description" class="dashboard-form__label"
+          >Descripción</label
+        >
+        <textarea
+          class="dashboard-form__field"
+          id="description"
+          name="description"
+          rows="1"
+          placeholder="Ej. Este libro es fabuloso..."
+        ></textarea>
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="fragment" class="dashboard-form__label">Fragmento</label>
+        <textarea
+          class="dashboard-form__field"
+          id="fragment"
+          name="fragment"
+          rows="1"
+          placeholder="Ej. Cuando tenía seis años..."
+        ></textarea>
+      </div>
+      <div class="dashboard-form__field-group">
+        <div>
+          <label for="book-genre" class="dashboard-form__label">Género</label> -
+          <a
+            role="button"
+            aria-label="¿No encuentras el género que buscas? Crear un nuevo género"
+            class="select-options__btn"
+            id="open-genre-dialog"
+            >Crear Género</a
+          >
+        </div>
+        <select name="genre" id="book-genre" class="dashboard-form__field">
+          <option value="Fantasía" selected>Fantasía</option>
+          <option value="Novela Romántica">Novela Romántica</option>
+          <option value="Cuento">Cuento</option>
+        </select>
+      </div>
+      <div class="dashboard-form__field-group">
+        <div>
+          <label for="book-author" class="dashboard-form__label">Autor</label>
+          -
+          <a
+            role="button"
+            aria-label="¿No encuentras el autoer que buscas? Crear un nuevo autor"
+            class="select-options__btn"
+            id="open-author-dialog"
+            >Crear Autor</a
+          >
+        </div>
+        <select name="author" id="book-author" class="dashboard-form__field">
+          <option value="Cal Newport" selected>Cal Newport</option>
+          <option value="Irene Vallejo">Irene Vallejo</option>
+          <option value="Adam Grant">Adam Grant</option>
+        </select>
+      </div>
+    </form>
+    <div class="dashboard-form__controls">
+      <button form="book-form" type="submit" class="btn-form-dashboard">
+        Buscar libro
+      </button>
+      <button form="book-form" type="submit" class="btn-form-dashboard">
+        Actualizar
+      </button>
+      <button form="book-form" type="submit" class="btn-form-dashboard">
+        Eliminar
+      </button>
+      <button form="book-form" type="submit" class="btn-form-dashboard">
+        Crear
+      </button>
+    </div>
+    <button
+      id="close-books-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="users-dialog">
+    <h2 class="form-modal__title">Gestionar Usuarios</h2>
+    <button
+      id="close-users-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="genre-dialog">
+    <h2 class="form-modal__title">Crear un nuevo género</h2>
+    <p>Crea un nuevo género si no encuentras el que buscas.</p>
+    <form action="post" id="genre-form" class="dashboard-form--one-field">
+      <div class="dashboard-form__field-group">
+        <label for="genre" class="dashboard-form__label">Género</label>
+        <input
+          class="dashboard-form__field"
+          id="genre"
+          type="text"
+          name="genre"
+          placeholder="Ej. Realismo Mágico"
+        />
+      </div>
+    </form>
+    <button type="submit" form="genre-form" class="btn-form-dashboard">
+      Crear género
+    </button>
+    <button
+      id="close-genre-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="author-dialog">
+    <h2 class="form-modal__title">Crear un nuevo autor</h2>
+    <p>Crea un nuevo autor si no encuentras el que buscas.</p>
+    <form action="post" id="author-form" class="dashboard-form--one-field">
+      <div class="dashboard-form__field-group">
+        <label for="new-author" class="dashboard-form__label">Autor</label>
+        <input
+          class="dashboard-form__field"
+          id="new-author"
+          type="text"
+          name="author"
+          placeholder="Ej. Sönke Ahrens"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="profile-img" class="dashboard-form__label"
+          >Foto de perfil</label
+        >
+        <input
+          class="dashboard-form__field"
+          id="profile-img"
+          type="text"
+          name="profile-img"
+          placeholder="https://api.dicebear.com/6.x/lorelei/svg?seed=sönkeahrens"
+          readonly
+        />
+      </div>
+    </form>
+    <button type="submit" form="author-form" class="btn-form-dashboard">
+      Crear autor
+    </button>
+    <button
+      id="close-author-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
   <script src="/biblioweb/public/js/dashboard-charts.js"></script>
   <script src="/biblioweb/public/js/dashboard-navigation.js"></script>
+  <script src="/biblioweb/public/js/dashboard-modals.js"></script>
 </html>
