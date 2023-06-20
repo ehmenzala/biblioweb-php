@@ -38,7 +38,5 @@ $router->get('/biblioweb/autores/', 'src/views/autores.html');
 $router->get('/biblioweb/rating/', 'src/views/rating.html');
 $router->get('/biblioweb/admin/', 'src/views/admin-view.html');
 $router->get('/biblioweb/dashboard/', 'src/views/dashboard.html');
-$router->get('/biblioweb/dashboard/bibliografia/', 'src/views/dashboard-bibliografia.html');
-$router->get('/biblioweb/dashboard/usuarios/', 'src/views/dashboard-usuarios.html');
 
 $router->route($uri, $method);
