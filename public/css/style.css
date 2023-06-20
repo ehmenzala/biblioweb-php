@@ -23,6 +23,7 @@
 }
 
 :root {
+  --clr-primary-600: hsl(259, 9%, 35%);
   --clr-primary-500: hsl(228, 33%, 61%);
   --clr-primary-400: hsl(260, 64%, 72%);
   --clr-primary-300: hsl(276, 95%, 77%);
@@ -153,6 +154,12 @@ textarea {
   color: var(--clr-accent-600);
   background-color: transparent;
   border: 1px solid var(--clr-primary-400);
+}
+
+.btn-tertiary {
+  border: 1px solid var(--clr-primary-600);
+  color: hsl(0, 27%, 98%);
+  background-color: var(--clr-accent-600);
 }
 
 .btn-dashboard {
@@ -988,4 +995,8 @@ footer .container {
   background-color: var(--clr-accent-100);
   border-radius: 20px;
   break-inside: avoid;
+}
+
+.dashboard__card > * + * {
+  margin-top: 1rem;
 }
