@@ -18,9 +18,8 @@ const COLORS = [
 
 setupUserCount();
 setupBookCount();
+setupBookCharts();
 setupUsersByRoleChart();
-setupBooksByGenreChart();
-setupBookByRatingChart();
 
 function setupUserCount() {
   fetch("/biblioweb/usuarios/all/")
@@ -40,121 +39,64 @@ function setupBookCount() {
     });
 }
 
+function setupBookCharts() {
+  fetch("/biblioweb/libros/all/")
+    .then((r) => r.json())
+    .then((json) => {
+      let genresArr = [...json].map((book) => book.genre);
+      let genresCount = reduceArrToCoincidenceObject(genresArr);
+      setupChart(genresCount, "Género", "pie", $booksByGenreCtx);
+
+      let ratingArr = [...json].map((book) => book.rating);
+      let ratingCount = reduceArrToCoincidenceObject(ratingArr);
+      setupChart(ratingCount, "Rating", "bar", $booksByRatingCtx);
+    });
+}
+
 function setupUsersByRoleChart() {
   fetch("/biblioweb/usuarios/all/")
     .then((r) => r.json())
     .then((json) => {
       let usersArr = json.map((user) => user.role);
-      let userRoleCount = usersArr.reduce((acc, curr) => {
-        if (acc[curr]) {
-          acc[curr]++;
-        } else {
-          acc[curr] = 1;
-        }
-        return acc;
-      }, {});
-
-      const data = {
-        labels: [...Object.keys(userRoleCount)],
-        datasets: [
-          {
-            label: "Rol",
-            data: [...Object.values(userRoleCount)],
-            backgroundColor: [...COLORS],
-          },
-        ],
-      };
-
-      new Chart($usersByRoleCtx, {
-        type: "pie",
-        data,
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
+      let userRoleCount = reduceArrToCoincidenceObject(usersArr);
+      setupChart(userRoleCount, "Rol", "pie", $usersByRoleCtx);
     });
 }
 
-function setupBooksByGenreChart() {
-  fetch("/biblioweb/libros/all/")
-    .then((r) => r.json())
-    .then((json) => {
-      let genresArr = json.map((book) => book.genre);
-      let genresCount = genresArr.reduce((acc, curr) => {
-        if (acc[curr]) {
-          acc[curr]++;
-        } else {
-          acc[curr] = 1;
-        }
-        return acc;
-      }, {});
-
-      const data = {
-        labels: [...Object.keys(genresCount)],
-        datasets: [
-          {
-            label: "Género",
-            data: [...Object.values(genresCount)],
-            backgroundColor: [...COLORS],
-          },
-        ],
-      };
-
-      new Chart($booksByGenreCtx, {
-        type: "pie",
-        data,
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    });
+function reduceArrToCoincidenceObject(arr) {
+  return [...arr].reduce((acc, curr) => {
+    if (acc[curr]) {
+      acc[curr]++;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, {});
 }
 
-function setupBookByRatingChart() {
-  fetch("/biblioweb/libros/all/")
-    .then((r) => r.json())
-    .then((json) => {
-      let ratingArr = json.map((book) => book.rating);
-      let ratingCount = ratingArr.reduce((acc, curr) => {
-        if (acc[curr]) {
-          acc[curr]++;
-        } else {
-          acc[curr] = 1;
-        }
-        return acc;
-      }, {});
+function setupChart(dataCount, label, type, ctx) {
+  const data = {
+    labels: [...Object.keys(dataCount)],
+    datasets: [
+      {
+        label: label,
+        data: [...Object.values(dataCount)],
+        backgroundColor: [...COLORS],
+      },
+    ],
+  };
 
-      const data = {
-        labels: [...Object.keys(ratingCount)],
-        datasets: [
-          {
-            label: "Rating",
-            data: [...Object.values(ratingCount)],
-            backgroundColor: [...COLORS],
-          },
-        ],
-      };
-
-      new Chart($booksByRatingCtx, {
-        type: "bar",
-        data,
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
+  new Chart(ctx, {
+    type,
+    data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
         },
-      });
-    });
+      },
+    },
+  });
 }
 
 async function fetchBookByGenreId(genreId) {
