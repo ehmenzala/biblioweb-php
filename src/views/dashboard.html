@@ -90,59 +90,55 @@
         <article class="dashboard__card">
           <div>
             <h2>Usuarios registrados</h2>
-            <canvas class="chart"></canvas>
+            <p>Total de usuarios registrados en Biblioweb.</p>
+            <p
+              id="user-count"
+              class="big-text"
+              style="font-weight: var(--fw-600); font-size: var(--fs-900)"
+            ></p>
           </div>
-        </article>
-        <article class="dashboard__card">
-          <h2>Total de libros</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-            labore at voluptate voluptatibus veritatis. Illo quas consequatur
-            reprehenderit vero tempora?
-          </p>
         </article>
         <article class="dashboard__card">
           <div>
             <h2>Relación de libros por género</h2>
-            <canvas class="chart"></canvas>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
-              placeat laborum labore esse! Eum itaque architecto sint libero
-              numquam autem voluptates, nihil maiores sequi temporibus
-              doloremque iure odio provident tenetur.
-            </p>
+            <p>Todos los libros de Biblioweb ordenados por género.</p>
+            <canvas id="books-by-genre"></canvas>
           </div>
         </article>
         <article class="dashboard__card">
           <div>
-            <h2>Relación de libros por año de publicación</h2>
-            <canvas class="chart"></canvas>
+            <h2>Relación de libros por rating</h2>
+            <p>Todos los libros de Biblioweb ordenados por rating.</p>
+            <canvas id="books-by-rating"></canvas>
           </div>
+        </article>
+        <article class="dashboard__card">
+          <h2>Libros</h2>
+          <p>Todos los libros almacenados en Biblioweb.</p>
+          <p
+            id="book-count"
+            class="big-text"
+            style="font-weight: var(--fw-600); font-size: var(--fs-900)"
+          ></p>
         </article>
         <article class="dashboard__card">
           <h2>Relación de usuarios por rol</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
-            optio ex molestiae, est quasi quaerat? Blanditiis, doloremque. Ut
-            quam excepturi, impedit velit nisi minima saepe, suscipit sint iste
-            maiores labore.
+            Los usuarios de Biblioweb solo pueden tener el rol de usuario o
+            administrador.
           </p>
+          <canvas id="users-by-role"></canvas>
         </article>
         <article class="dashboard__card">
           <h2>Gestionar libros</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid
-            perferendis nostrum impedit, delectus animi ad optio tenetur at fuga
-            consectetur dolores voluptas doloribus hic recusandae facere iusto
-            dicta quasi ipsum a tempore. Pariatur maiores repudiandae
-            reprehenderit cumque consequuntur modi dolor, eaque atque ipsum
-            facere, ipsam, voluptas ratione natus iusto provident?
-          </p>
+          <p>Gestione los libros de Biblioweb desde un solo lugar.</p>
+          <button id="open-books-crud">Gestionar libros</button>
         </article>
         <article class="dashboard__card">
           <div>
             <h2>Gestionar usuarios</h2>
-            <canvas class="chart"></canvas>
+            <p>Gestione los usuarios de Biblioweb desde un solo lugar.</p>
+            <button id="open-users-crud">Gestionar libros</button>
           </div>
         </article>
       </section>
