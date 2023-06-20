@@ -173,9 +173,6 @@ textarea {
   background-color: var(--bg-color);
 }
 
-.btn-secondary-dashboard.active {
-}
-
 .error-message {
   color: red;
   font-weight: var(--fw-600);
