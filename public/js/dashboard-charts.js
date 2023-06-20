@@ -102,5 +102,4 @@ function setupChart(dataCount, label, type, ctx) {
 async function fetchBookByGenreId(genreId) {
   const response = await fetch(`/biblioweb/libros/genero/${genreId}/`);
   const books = await response.json();
-  console.log(books);
 }
