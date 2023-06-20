@@ -178,6 +178,11 @@ textarea {
   font-weight: var(--fw-600);
 }
 
+.big-text {
+  font-weight: var(--fw-600);
+  font-size: var(--fs-900);
+}
+
 /* General styling */
 
 body {
