@@ -17,12 +17,16 @@
           />
         </a>
         <div class="header-searchbar-wrapper">
-          <input
-            class="header-searchbar"
-            type="search"
-            placeholder="Libro o autor"
-            aria-placeholder="Buscar por libro o autor"
-          />
+          <form action="/biblioweb" method="post">
+            <input
+              class="header-searchbar"
+              type="search"
+              name="search"
+              placeholder="Libro o autor"
+              aria-placeholder="Buscar por libro o autor"
+            />
+            <input type="submit" style="display: none" />
+          </form>
         </div>
         <button id="open-login-dialog" class="header-session-btn">Log in</button
         ><span class="header-session-btn--deco"> // </span
