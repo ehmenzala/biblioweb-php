@@ -920,10 +920,6 @@ footer .container {
   right: 65%;
 }
 
-.form-modal__book-status {
-  color: var(--clr-primary-500);
-}
-
 .dashboard-form__controls {
   display: grid;
   grid-template-columns: 288px 288px;
