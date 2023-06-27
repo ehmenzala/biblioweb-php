@@ -2,16 +2,23 @@ const $openBooksDialog = document.getElementById("open-books-crud");
 const $openUsersDialog = document.getElementById("open-users-crud");
 const $openGenreDialog = document.getElementById("open-genre-dialog");
 const $openAuthorDialog = document.getElementById("open-author-dialog");
+const $openCreateUserDialog = document.getElementById(
+  "open-create-user-dialog"
+);
 
 const $closeBooksDialog = document.getElementById("close-books-dialog");
 const $closeUsersDialog = document.getElementById("close-users-dialog");
 const $closeGenreDialog = document.getElementById("close-genre-dialog");
 const $closeAuthorDialog = document.getElementById("close-author-dialog");
+const $closeCreateUserDialog = document.getElementById(
+  "close-create-user-dialog"
+);
 
 const $booksDialog = document.getElementById("books-dialog");
 const $usersDialog = document.getElementById("users-dialog");
 const $genreDialog = document.getElementById("genre-dialog");
 const $authorDialog = document.getElementById("author-dialog");
+const $createUserDialog = document.getElementById("create-user-dialog");
 
 const $profileAuthorInput = document.getElementById("profile-img");
 const $authorInput = document.getElementById("new-author");
@@ -46,6 +53,10 @@ $openAuthorDialog.addEventListener("click", () => {
   $authorDialog.showModal();
 });
 
+$openCreateUserDialog.addEventListener("click", () => {
+  $createUserDialog.showModal();
+});
+
 /* CLOSE DIALOGS */
 
 $closeBooksDialog.addEventListener("click", () => {
@@ -62,4 +73,8 @@ $closeGenreDialog.addEventListener("click", () => {
 
 $closeAuthorDialog.addEventListener("click", () => {
   $authorDialog.close();
+});
+
+$closeCreateUserDialog.addEventListener("click", () => {
+  $createUserDialog.close();
 });

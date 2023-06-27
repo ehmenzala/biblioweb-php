@@ -302,8 +302,94 @@
       aria-label="Cerrar modal"
     ></button>
   </dialog>
-  <dialog class="form-modal" id="users-dialog">
-    <h2 class="form-modal__title">Gestionar Usuarios</h2>
+  <dialog class="form-modal form-modal--users-dialog" id="users-dialog">
+    <div>
+      <h2 class="form-modal__title">Gestionar Usuarios</h2>
+      <p>Gestiona los usuarios de la aplicación desde un solo lugar.</p>
+    </div>
+    <div class="user-table-wrapper">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+            <th>Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>randuser</td>
+            <td>alquimia@roqwand.com</td>
+            <td>
+              <span class="role role-admin">Admin</span>
+            </td>
+            <td>Cr/El</td>
+            <td>
+              002aa056a5b54df0c60d65edfe9479b677c48c1cf265ab4abefb29d8cafabc82
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>username</td>
+            <td>correo@correo.com</td>
+            <td>
+              <span class="role role-user">Usuario</span>
+            </td>
+            <td>Cr/El</td>
+            <td>
+              60c7ff6729cb8160a8a553a32be0922fcdeb939370b508cd52b0ae5714e40728
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>yareriru</td>
+            <td>correo@correo.com</td>
+            <td>
+              <span class="role role-user">Usuario</span>
+            </td>
+            <td>Cr/El</td>
+            <td>
+              4715a76a0b3865bd1baf96c7ac78d6d2a7bb0a46c194150bba9830b61496cc91
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>username</td>
+            <td>correo@correo.com</td>
+            <td>
+              <span class="role role-user">Usuario</span>
+            </td>
+            <td>Cr/El</td>
+            <td>
+              c1eddb9f06e7c8246d9fee61a865103961e27401abea5d21f1b3aa89be7a748c
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>username</td>
+            <td>correo@correo.com</td>
+            <td>
+              <span class="role role-user">Usuario</span>
+            </td>
+            <td>Cr/El</td>
+            <td>
+              fa95d4b80e817714d5bb657c642e67463f8463230de8b8ab17fcfc6dae4e565d
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button
+      type="button"
+      id="open-create-user-dialog"
+      class="btn-form-dashboard"
+    >
+      Crear nuevo usuario
+    </button>
     <button
       id="close-users-dialog"
       class="form-modal__close"
@@ -367,6 +453,19 @@
     </button>
     <button
       id="close-author-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="create-user-dialog">
+    <h2 class="form-modal__title">Crear un nuevo usuario</h2>
+    <p>Estás creando un nuevo usuario.</p>
+    <form action="post" id="create-user-form"></form>
+    <button type="submit" id="create-user-form" class="btn-form-dashboard">
+      Confirmar
+    </button>
+    <button
+      id="close-create-user-dialog"
       class="form-modal__close"
       aria-label="Cerrar modal"
     ></button>

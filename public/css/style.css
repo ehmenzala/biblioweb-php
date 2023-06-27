@@ -870,6 +870,15 @@ footer .container {
   overflow-x: hidden;
 }
 
+.form-modal--users-dialog:not([open]) {
+  display: none;
+}
+
+.form-modal--users-dialog {
+  display: grid;
+  gap: 1em;
+}
+
 .form-modal__title {
   font-size: var(--fs-700);
 }
@@ -960,4 +969,57 @@ textarea.dashboard-form__field {
   text-decoration: underline;
   color: var(--clr-primary-500);
   cursor: pointer;
+}
+
+.user-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: 0px 0px 9px hsl(257, 21%, 16%, 0.5); */
+}
+
+.user-table {
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.user-table th {
+  text-align: left;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.8em;
+}
+
+.user-table tr {
+  border-bottom: 1px solid gray;
+}
+
+.user-table thead tr {
+  background-color: #dbd2ec;
+}
+
+.user-table tbody tr {
+  background-color: #eeebf4;
+}
+
+.role {
+  border-radius: 999px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.25em 0.5em;
+  font-size: 14px;
+}
+
+.role-user {
+  color: rgb(24, 51, 71);
+  border-color: rgb(24, 51, 71);
+  background-color: rgb(211, 229, 239);
+}
+
+.role-admin {
+  color: rgb(65, 36, 84);
+  border-color: rgb(65, 36, 84);
+  background-color: rgb(232, 222, 238);
 }
