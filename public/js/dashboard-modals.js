@@ -1,5 +1,5 @@
-const $openManageBooksBtn = document.getElementById("open-books-crud");
-const $openManageUsersBtn = document.getElementById("open-users-crud");
+const $openBooksDialog = document.getElementById("open-books-crud");
+const $openUsersDialog = document.getElementById("open-users-crud");
 const $openGenreDialog = document.getElementById("open-genre-dialog");
 const $openAuthorDialog = document.getElementById("open-author-dialog");
 
@@ -30,11 +30,11 @@ $authorInput.addEventListener("input", (e) => {
 
 /* OPEN DIALOGS */
 
-$openManageBooksBtn.addEventListener("click", () => {
+$openBooksDialog.addEventListener("click", () => {
   $booksDialog.showModal();
 });
 
-$openManageUsersBtn.addEventListener("click", () => {
+$openUsersDialog.addEventListener("click", () => {
   $usersDialog.showModal();
 });
 
