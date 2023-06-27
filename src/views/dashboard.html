@@ -302,6 +302,67 @@
       aria-label="Cerrar modal"
     ></button>
   </dialog>
+  <dialog class="form-modal" id="genre-dialog">
+    <h2 class="form-modal__title">Crear un nuevo género</h2>
+    <p>Crea un nuevo género si no encuentras el que buscas.</p>
+    <form method="post" id="genre-form" class="dashboard-form--one-field">
+      <div class="dashboard-form__field-group">
+        <label for="genre" class="dashboard-form__label">Género</label>
+        <input
+          class="dashboard-form__field"
+          id="genre"
+          type="text"
+          name="genre"
+          placeholder="Ej. Realismo Mágico"
+        />
+      </div>
+    </form>
+    <button type="submit" form="genre-form" class="btn-form-dashboard">
+      Crear género
+    </button>
+    <button
+      id="close-genre-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="author-dialog">
+    <h2 class="form-modal__title">Crear un nuevo autor</h2>
+    <p>Crea un nuevo autor si no encuentras el que buscas.</p>
+    <form method="post" id="author-form" class="dashboard-form--one-field">
+      <div class="dashboard-form__field-group">
+        <label for="new-author" class="dashboard-form__label">Autor</label>
+        <input
+          class="dashboard-form__field"
+          id="new-author"
+          type="text"
+          name="author"
+          placeholder="Ej. Sönke Ahrens"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label for="profile-img" class="dashboard-form__label"
+          >Foto de perfil</label
+        >
+        <input
+          class="dashboard-form__field"
+          id="profile-img"
+          type="text"
+          name="profile-img"
+          placeholder="https://api.dicebear.com/6.x/lorelei/svg?seed=sönkeahrens"
+          readonly
+        />
+      </div>
+    </form>
+    <button type="submit" form="author-form" class="btn-form-dashboard">
+      Crear autor
+    </button>
+    <button
+      id="close-author-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
   <dialog class="form-modal form-modal--users-dialog" id="users-dialog">
     <div>
       <h2 class="form-modal__title">Gestionar Usuarios</h2>
@@ -385,7 +446,7 @@
     </div>
     <button
       type="button"
-      id="open-create-user-dialog"
+      id="open-user-action-dialog"
       class="btn-form-dashboard"
     >
       Crear nuevo usuario
@@ -396,76 +457,73 @@
       aria-label="Cerrar modal"
     ></button>
   </dialog>
-  <dialog class="form-modal" id="genre-dialog">
-    <h2 class="form-modal__title">Crear un nuevo género</h2>
-    <p>Crea un nuevo género si no encuentras el que buscas.</p>
-    <form action="post" id="genre-form" class="dashboard-form--one-field">
+  <dialog class="form-modal form-modal--user-action" id="user-action-dialog">
+    <h2 class="form-modal__title">
+      <span id="user-action-title">Crear un nuevo usuario</span>
+      <span id="user-action-title-id" class="txt-purple">5</span>
+    </h2>
+    <p id="user-action-text">Estás creando un nuevo usuario.</p>
+    <form method="post" id="user-action-form" class="dashboard-form">
       <div class="dashboard-form__field-group">
-        <label for="genre" class="dashboard-form__label">Género</label>
+        <label for="user-id" class="dashboard-form__label">ID</label>
         <input
+          type="number"
+          name="user-id"
+          id="user-id"
           class="dashboard-form__field"
-          id="genre"
-          type="text"
-          name="genre"
-          placeholder="Ej. Realismo Mágico"
-        />
-      </div>
-    </form>
-    <button type="submit" form="genre-form" class="btn-form-dashboard">
-      Crear género
-    </button>
-    <button
-      id="close-genre-dialog"
-      class="form-modal__close"
-      aria-label="Cerrar modal"
-    ></button>
-  </dialog>
-  <dialog class="form-modal" id="author-dialog">
-    <h2 class="form-modal__title">Crear un nuevo autor</h2>
-    <p>Crea un nuevo autor si no encuentras el que buscas.</p>
-    <form action="post" id="author-form" class="dashboard-form--one-field">
-      <div class="dashboard-form__field-group">
-        <label for="new-author" class="dashboard-form__label">Autor</label>
-        <input
-          class="dashboard-form__field"
-          id="new-author"
-          type="text"
-          name="author"
-          placeholder="Ej. Sönke Ahrens"
-        />
-      </div>
-      <div class="dashboard-form__field-group">
-        <label for="profile-img" class="dashboard-form__label"
-          >Foto de perfil</label
-        >
-        <input
-          class="dashboard-form__field"
-          id="profile-img"
-          type="text"
-          name="profile-img"
-          placeholder="https://api.dicebear.com/6.x/lorelei/svg?seed=sönkeahrens"
           readonly
         />
       </div>
+      <div class="dashboard-form__field-group">
+        <label for="user-email" class="dashboard-form__label">Correo</label>
+        <input
+          class="dashboard-form__field"
+          id="user-email"
+          type="text"
+          name="user-email"
+          placeholder="Ej. email@gmail.com"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <label
+          for="user-passwd"
+          aria-describedby="user-passwd-tooltip"
+          class="dashboard-form__label"
+        >
+          Contraseña
+          <div class="user-passwd-tooltip-wrapper"></div>
+          <span role="tooltip" id="user-passwd-tooltip" class="visually-hidden"
+            >La contraseña será encriptada</span
+          >
+        </label>
+        <input
+          class="dashboard-form__field"
+          id="user-passwd"
+          type="text"
+          name="user-passwd"
+        />
+      </div>
+      <div class="dashboard-form__field-group">
+        <div>
+          <label for="user-role" class="dashboard-form__label">Rol</label>
+        </div>
+        <select name="user-role" id="user-role" class="dashboard-form__field">
+          <option value="usuario" selected>Usuario</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <input id="user-action-input" type="hidden" name="user-action" />
     </form>
-    <button type="submit" form="author-form" class="btn-form-dashboard">
-      Crear autor
-    </button>
     <button
-      id="close-author-dialog"
-      class="form-modal__close"
-      aria-label="Cerrar modal"
-    ></button>
-  </dialog>
-  <dialog class="form-modal" id="create-user-dialog">
-    <h2 class="form-modal__title">Crear un nuevo usuario</h2>
-    <p>Estás creando un nuevo usuario.</p>
-    <form action="post" id="create-user-form"></form>
-    <button type="submit" id="create-user-form" class="btn-form-dashboard">
+      type="submit"
+      form="user-action-form"
+      id="user-action-submit"
+      class="btn-form-dashboard"
+    >
       Confirmar
     </button>
     <button
-      id="close-create-user-dialog"
+      id="close-user-action-dialog"
       class="form-modal__close"
       aria-label="Cerrar modal"
     ></button>

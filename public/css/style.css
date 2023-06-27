@@ -44,6 +44,7 @@
     var(--clr-primary-300)
   );
 
+  --fs-100: 0.9375rem;
   --fs-200: 0.875rem;
   --fs-300: 0.96875rem;
   --fs-400: 1rem;
@@ -126,6 +127,20 @@ select {
 }
 
 /* Utility classes */
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.txt-purple {
+  color: var(--clr-primary-500);
+}
 
 .container {
   width: 75rem;
@@ -941,6 +956,10 @@ footer .container {
   display: grid;
 }
 
+.dashboard-form__field-group--span-2 {
+  grid-column: 1 / span 2;
+}
+
 .dashboard-form__label {
   font-size: var(--fs-400);
   font-weight: var(--fw-500);
@@ -980,7 +999,7 @@ textarea.dashboard-form__field {
 
 .user-table {
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: var(--fs-100);
 }
 
 .user-table th {
@@ -1022,4 +1041,45 @@ textarea.dashboard-form__field {
   color: rgb(65, 36, 84);
   border-color: rgb(65, 36, 84);
   background-color: rgb(232, 222, 238);
+}
+
+.user-passwd-tooltip-wrapper {
+  --vertical-gap: 0.55rem;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 21px;
+  aspect-ratio: 1 / 1;
+  background-image: url(/biblioweb/public/assets/img/icons/info-icon.svg);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.user-passwd-tooltip-wrapper:hover::after,
+.user-passwd-tooltip-wrapper:hover::before {
+  background-color: var(--clr-accent-900);
+}
+
+.user-passwd-tooltip-wrapper:hover::after {
+  content: "La contraseña será encriptada";
+  position: absolute;
+  transform: translateX(-45%);
+  left: 50%;
+  bottom: calc(100% + var(--vertical-gap));
+  font-size: var(--fs-100);
+  width: max-content;
+  padding: 0.25em 0.5em;
+  color: var(--clr-accent-100);
+  border-radius: 5px;
+}
+
+.user-passwd-tooltip-wrapper:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(-1 * var(--vertical-gap) - 1px);
+  width: 12px;
+  aspect-ratio: 1 / 1;
+  clip-path: polygon(50% 80%, 0 0, 100% 0);
 }
