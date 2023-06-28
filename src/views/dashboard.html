@@ -539,13 +539,13 @@
     <p id="user-action-text">Estás creando un nuevo usuario.</p>
     <form method="post" id="user-action-form" class="dashboard-form">
       <div class="dashboard-form__field-group">
-        <label for="user-id" class="dashboard-form__label">ID</label>
+        <label for="user-id" class="dashboard-form__label">Username</label>
         <input
-          type="number"
-          name="user-id"
-          id="user-id"
+          type="text"
+          spellcheck="false"
+          name="user-name"
+          id="user-name"
           class="dashboard-form__field"
-          readonly
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -582,8 +582,8 @@
           <label for="user-role" class="dashboard-form__label">Rol</label>
         </div>
         <select name="user-role" id="user-role" class="dashboard-form__field">
-          <option value="usuario" selected>Usuario</option>
-          <option value="admin">Admin</option>
+          <option value="admin" selected>Admin</option>
+          <option value="usuario">Usuario</option>
         </select>
       </div>
       <input id="user-action-input" type="hidden" name="user-action" />

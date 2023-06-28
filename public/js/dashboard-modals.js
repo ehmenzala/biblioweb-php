@@ -39,25 +39,63 @@ $authorInput.addEventListener("input", (e) => {
 
 /* *** User action */
 
+const $editUserBtns = document.querySelectorAll(".action-btn--edit");
+console.log($editUserBtns);
+
 const $userActionForm = document.getElementById("user-action-form");
 const $userActionTitle = document.getElementById("user-action-title");
 const $userActionUserId = document.getElementById("user-action-title-id");
 const $userActionText = document.getElementById("user-action-text");
+
+$editUserBtns.forEach(($editUserBtn) => {
+  $editUserBtn.addEventListener("click", (e) => {
+    const $selectedUserRow = e.target.closest("tr");
+    const userData = [
+      ...$selectedUserRow.querySelectorAll("td:not(:nth-child(5))"),
+    ].map((td) => td.textContent.trim().toLowerCase());
+
+    openUserActionDialogWithParams({
+      id: userData[0],
+      username: userData[1],
+      email: userData[2],
+      role: userData[3],
+      passwd: userData[4],
+    });
+    console.log(userData);
+  });
+});
 
 $openUserActionDialog.addEventListener("click", () => {
   $userActionForm.reset();
   $userActionTitle.textContent = "Creando usuario...";
   $userActionText.textContent = "Estás creando un nuevo usuario.";
   $userActionUserId.textContent = "";
-
-  // $userActionTitle.textContent = "Modificando usuario";
-  // $userActionText.textContent = "Estás modificando un usuario existente.";
-  // $userActionUserId.textContent = "- ID 5";
 });
 
 /* Dialogs */
 
 setupDialogs();
+
+function openUserActionDialogWithParams({ id, username, email, role, passwd }) {
+  const SELECT_OPTIONS = ["admin", "usuario"];
+  const $usernameInput = document.getElementById("user-name");
+  const $emailInput = document.getElementById("user-email");
+  const $passwdInput = document.getElementById("user-passwd");
+  const $roleSelect = document.getElementById("user-role");
+
+  $usernameInput.value = username;
+  $emailInput.value = email;
+  $passwdInput.value = passwd;
+  $roleSelect.selectedIndex = SELECT_OPTIONS.indexOf(role);
+
+  console.log(`Selected role: ${SELECT_OPTIONS.indexOf(role)}`);
+
+  $userActionTitle.textContent = "Modificando usuario";
+  $userActionText.textContent = "Estás modificando un usuario existente.";
+  $userActionUserId.textContent = `- ID ${id}`;
+
+  $userActionDialog.showModal();
+}
 
 function setupDialogs() {
   $openBooksDialog.addEventListener("click", () => {
