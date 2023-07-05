@@ -66,46 +66,16 @@
       <section class="container section authors-section">
         <h1 class="h2">Nuestros autores</h1>
         <div class="authors-gallery">
-          <figure class="author">
-            <img
-              class="author-image"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
-              alt="Imagen del autor"
-            />
-            <figcaption class="author-name">Jhon Dough</figcaption>
-          </figure>
-          <figure class="author">
-            <img
-              class="author-image"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
-              alt="Imagen del autor"
-            />
-            <figcaption class="author-name">Jhon Dough</figcaption>
-          </figure>
-          <figure class="author">
-            <img
-              class="author-image"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
-              alt="Imagen del autor"
-            />
-            <figcaption class="author-name">Jhon Dough</figcaption>
-          </figure>
-          <figure class="author">
-            <img
-              class="author-image"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
-              alt="Imagen del autor"
-            />
-            <figcaption class="author-name">Jhon Dough</figcaption>
-          </figure>
-          <figure class="author">
-            <img
-              class="author-image"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=randomguy"
-              alt="Imagen del autor"
-            />
-            <figcaption class="author-name">Jhon Dough</figcaption>
-          </figure>
+          <?php foreach ($authors as $author) : ?>
+            <figure class="author">
+              <img
+                class="author-image"
+                src="<?= $author->get_profile() ?>"
+                alt="Imagen del autor"
+              />
+              <figcaption class="author-name"><?= $author->get_full_name() ?></figcaption>
+            </figure>
+          <?php endforeach; ?>
         </div>
       </section>
       <section class="container section info-section">
