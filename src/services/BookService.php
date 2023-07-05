@@ -26,8 +26,8 @@ class BookService extends MainService implements BookRepository {
         $results = $st->fetchAll();
         $books = array_map(function ($result) {
             return new Book(
-                $result['id_libro'], $result['genero'],
-                $result['autor'], $result['titulo'],
+                $result['id_libro'], new Genre(0, $result['genero']),
+                new Author(0, $result['autor'], ""), $result['titulo'],
                 $result['anio_publicacion'], $result['num_paginas'],
                 $result['idioma'], $result['idioma_original'],
                 $result['descripcion'], $result['rating'],
@@ -56,8 +56,8 @@ class BookService extends MainService implements BookRepository {
         $results = $st->fetchAll();
         $books = array_map(function ($result) {
             return new Book(
-                $result['id_libro'], $result['genero'],
-                $result['autor'], $result['titulo'],
+                $result['id_libro'], new Genre(0, $result['genero']),
+                new Author(0, $result['autor'], ""), $result['titulo'],
                 $result['anio_publicacion'], $result['num_paginas'],
                 $result['idioma'], $result['idioma_original'],
                 $result['descripcion'], $result['rating'],

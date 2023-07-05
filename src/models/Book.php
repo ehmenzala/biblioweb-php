@@ -32,7 +32,7 @@ class Book implements JsonSerializable {
         $this->views = $views;
     }
 
-    public function jsonSerialize() {
+    public function jsonSerialize(): array {
         return [
             'id' => $this->id,
             'genre' => $this->genre->get_name(),
