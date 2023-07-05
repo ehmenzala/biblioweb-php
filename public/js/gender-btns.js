@@ -24,6 +24,7 @@ function fetchBookByGenreId(id) {
 
       books.forEach((book) => {
         const $bookItem = createBookItem(
+          book.id,
           book.cover,
           book.rating,
           book.title,
@@ -36,7 +37,7 @@ function fetchBookByGenreId(id) {
     });
 }
 
-function createBookItem(cover, rating, title, author) {
+function createBookItem(id, cover, rating, title, author) {
   const $bookListItem = document.createElement("LI");
 
   const $bookTop = document.createElement("DIV");
@@ -61,7 +62,12 @@ function createBookItem(cover, rating, title, author) {
   }
 
   const $bookTitle = document.createElement("H3");
-  $bookTitle.textContent = title;
+  const $bookLink = document.createElement("A");
+  $bookLink.setAttribute("href", `/biblioweb/detalle-libro/?id=${id}`);
+  $bookLink.classList.add("book-link");
+  $bookLink.textContent = title;
+
+  $bookTitle.appendChild($bookLink);
 
   $bookTop.appendChild($bookCover);
   $bookTop.appendChild($bookRating);

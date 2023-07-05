@@ -79,6 +79,7 @@
         <div class="general-info-section">
           <div class="book-info-wrapper">
             <img
+              class="book-info-cover"
               src="<?= $book->get_cover() ?>"
               alt="Portada del libro"
             />

@@ -314,6 +314,10 @@ footer .container {
   align-items: start;
 }
 
+.book-info-cover {
+  width: 250px;
+}
+
 .rating-stars {
   display: flex;
   gap: 6px;

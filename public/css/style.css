@@ -641,6 +641,11 @@ header.container > * + * {
   font-size: var(--fs-400);
 }
 
+.book-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .book p {
   font-weight: var(--fw-500);
   color: var(--clr-secondary-400);

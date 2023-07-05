@@ -149,7 +149,11 @@
                   alt="Estrella de rating"
                 />
               </div>
-              <h3><?= $book->get_title() ?></h3>
+              <h3>
+                <a class="book-link" href="/biblioweb/detalle-libro/?id=<?= $book->get_id() ?>"
+                  ><?= $book->get_title() ?></a
+                >
+              </h3>
             </div>
             <p><?= $book->get_author()->get_full_name() ?></p>
           </li>
@@ -196,7 +200,11 @@
                   alt="Estrella de rating"
                 />
               </div>
-              <h3><?= $book->get_title() ?></h3>
+                <h3>
+                    <a class="book-link" href="/biblioweb/detalle-libro/?id=<?= $book->get_id() ?>"
+                      ><?= $book->get_title() ?></a
+                    >
+                </h3>
             </div>
             <p><?= $book->get_author()->get_full_name() ?></p>
           </li>
