@@ -68,6 +68,16 @@ class BookService extends MainService implements BookRepository {
         return $books;
     }
 
+    public function get_all_genres(): array {
+        $st = self::$db->prepare("SELECT * FROM genero");
+        $st->execute();
+        $results = $st->fetchAll();
+        $genres = array_map(function ($result) {
+            return new Genre($result["id_genero"], $result["nombre"]);
+        }, $results);
+        return $genres;
+    }
+
     public function get_by_genre_id(string $genre_id): array {
         $st = self::$db->prepare("
           SELECT l.id_libro, g.nombre AS genero, a.nombre_completo AS autor,
