@@ -21,6 +21,14 @@ class ApiRouter {
             header("Content-Type: application/json");
             echo json_encode($books, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
             die();
+        } else if ($uri == '/biblioweb/fragments/random/') {
+            $randomFragment = $this->bookService->get_random_fragment();
+            $response = [
+                'content' => $randomFragment,
+            ];
+            header("Content-Type: application/json");
+            echo json_encode($response, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+            die();
         } else if (preg_match('/^\/biblioweb\/libros\/genero\/[0-9]+\/$/', $uri, $matches)) {
             $explodedUri = explode('/', $matches[0]);
             $count = count($explodedUri) - 2;

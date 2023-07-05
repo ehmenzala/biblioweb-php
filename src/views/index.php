@@ -95,9 +95,9 @@
               href="/biblioweb/views/register.html"
               >Registrarse</a
             >
-            <a class="hero-section__link btn btn-secondary" href="#"
-              >Libro de prueba</a
-            >
+            <button class="hero-section__link btn btn-secondary" id="random-fragment-btn" href="#">
+              Fragmento de prueba
+            </button>
           </div>
         </div>
         <div>
@@ -447,6 +447,10 @@
         </div>
       </form>
     </dialog>
+    <dialog class="fragment-dialog" id="random-fragment-dialog">
+      <p id="random-fragment">Lorem</p>
+    </dialog>
+    <script src="/biblioweb/public/js/random-fragment.js"></script>
     <script src="/biblioweb/public/js/modals.js"></script>
   </body>
 </html>
