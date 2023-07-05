@@ -33,7 +33,7 @@ $apiRouter->handleRequest($uri, $method);
 $router = new Router();
 
 $router->get('/biblioweb/', 'src/controllers/BookController.php');
-$router->get('/biblioweb/libros/', 'src/views/libros.html');
+$router->get('/biblioweb/libros/', 'src/views/books.html');
 $router->get('/biblioweb/autores/', 'src/views/autores.html');
 $router->get('/biblioweb/rating/', 'src/views/rating.html');
 $router->get('/biblioweb/admin/', 'src/views/admin-view.html');
