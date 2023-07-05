@@ -65,12 +65,12 @@
           </li>
           <li class="breadcrumb-item">
             <a class="breadcrumb-link" href="#" aria-current="location"
-              >Fantasía</a
+              ><?= $book->get_genre()->get_name() ?></a
             >
           </li>
           <li class="breadcrumb-item">
             <a class="breadcrumb-link" href="#" aria-current="location"
-              >Don Quijote</a
+              ><?= $book->get_title() ?></a
             >
           </li>
         </ol>
@@ -79,32 +79,32 @@
         <div class="general-info-section">
           <div class="book-info-wrapper">
             <img
-              src="/biblioweb/public/assets/img/book-info-portada.jpg"
+              src="<?= $book->get_cover() ?>"
               alt="Portada del libro"
             />
             <div class="book-info">
-              <h1 id="book-title" class="book-title">Don Quijote</h1>
-              <h2 id="book-author" class="book-author">Miguel de Cervantes</h2>
+              <h1 id="book-title" class="book-title"><?= $book->get_title() ?></h1>
+              <h2 id="book-author" class="book-author"><?= $book->get_author()->get_full_name() ?></h2>
               <div class="book-info-item">
                 <span>Año de publicación: </span>
-                <span id="published-date" class="book-property">2020 </span>
+                <span id="published-date" class="book-property"><?= $book->get_pub_year() ?></span>
               </div>
               <div class="book-info-item">
                 <span>Género: </span>
-                <span id="gender" class="book-property">Novela</span>
+                <span id="gender" class="book-property"><?= $book->get_genre()->get_name() ?></span>
               </div>
               <div class="book-info-item">
                 <span>Número de páginas: </span>
-                <span id="number-of-pages" class="book-property">1000</span>
+                <span id="number-of-pages" class="book-property"><?= $book->get_no_pages() ?></span>
               </div>
               <div class="book-info-item">
                 <span>Idioma: </span>
-                <span id="language" class="book-property">Español</span>
+                <span id="language" class="book-property"><?= $book->get_language() ?></span>
               </div>
               <div class="book-info-item">
                 <span>Idioma original: </span>
                 <span id="original-language" class="book-property"
-                  >Español</span
+                  ><?= $book->get_org_language() ?></span
                 >
               </div>
               <button class="btn btn-primary">Lee el libro</button>
@@ -134,33 +134,7 @@
           </div>
         </div>
         <h3>Descipción</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries.
-        </p>
-        <h4>Prefacio</h4>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting.
-        </p>
-        <p>
-          Remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop
-        </p>
-        <p>
-          Dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an
-          unknown printer took a galley of type and scrambled it to make a type
-          specimen book. It has survived not only five centuries, but also the
-          leap into electronic typesetting.
-        </p>
+        <p><?= $book->get_description() ?></p>
       </section>
       <section class="container section-info">
         <div class="info-header">
