@@ -72,10 +72,11 @@
 
         <!-- This will be dynamically generated -->
         <ul class="book-list media-scroller" role="list">
+          <?php foreach ($bestBooks as $book): ?>
           <li class="book">
             <div class="book-top">
               <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
+                src="<?= $book->get_cover(); ?>"
                 alt="Portada del libro."
               />
               <div class="book-rating">
@@ -100,202 +101,11 @@
                   alt="Estrella de rating"
                 />
               </div>
-              <h3>Don Quijote</h3>
+              <h3><?= $book->get_title(); ?></h3>
             </div>
-            <p>Miguel de Cervantes</p>
+            <p><?= $book->get_author()->get_full_name(); ?></p>
           </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
-          <li class="book">
-            <div class="book-top">
-              <img
-                src="/biblioweb/public/assets/img/portada-book.jpg"
-                alt="Portada del libro."
-              />
-              <div class="book-rating">
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-              </div>
-              <h3>Don Quijote</h3>
-            </div>
-            <p>Miguel de Cervantes</p>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </section>
       <section class="container section info-section">

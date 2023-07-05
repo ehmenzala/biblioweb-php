@@ -35,7 +35,7 @@ $router = new Router();
 $router->get('/biblioweb/', 'src/controllers/BookController.php');
 $router->get('/biblioweb/libros/', 'src/controllers/GenreController.php');
 $router->get('/biblioweb/autores/', 'src/controllers/AuthorController.php');
-$router->get('/biblioweb/rating/', 'src/views/rating.html');
+$router->get('/biblioweb/rating/', 'src/controllers/RatingBookController.php');
 $router->get('/biblioweb/admin/', 'src/views/admin-view.html');
 $router->get('/biblioweb/dashboard/', 'src/views/dashboard.html');
 
