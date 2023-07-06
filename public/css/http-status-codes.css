@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  font-size: 21px;
+}
+
+body.e-404 {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.txt-gray {
+  color: gray;
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.e-404 {
+  text-align: center;
+}
+
+.e-404 .return-homepage {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.e-404 a {
+  color: hsl(260, 33%, 56%);
+  text-decoration: none;
+}
+
+.e-404 .img-wrapper {
+  position: relative;
+}
+
+.e-404 .pardon {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.employee-name {
+  position: absolute;
+  padding: 0.75em 0.375em;
+  font-size: 16px;
+  color: white;
+  background-color: hsl(260, 33%, 56%);
+}
+
+.dylan,
+.esteban,
+.jhovan,
+.diego {
+  bottom: -1rem;
+}
+
+.dylan {
+  left: 10%;
+}
+
+.esteban {
+  left: 35%;
+}
+
+.jhovan {
+  left: 57%;
+}
+
+.diego {
+  left: 82%;
+}
