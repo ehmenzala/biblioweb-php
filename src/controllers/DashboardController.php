@@ -1,7 +1,6 @@
 <?php
 
-class BookDetailController {
-
+class DashboardController {
     private $bookService;
 
     function __construct(BookService $bookService) {
@@ -9,9 +8,7 @@ class BookDetailController {
     }
 
     public function index(): void {
-        $bookId = $_GET['id'];
-        $book = $this->bookService->get($bookId);
-        require 'src/views/detalle-libro.php';
+        require 'src/views/dashboard.html';
     }
 
 }

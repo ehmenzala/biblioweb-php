@@ -14,8 +14,3 @@ class AuthorController {
     }
 
 }
-
-$db = new PDO('mysql:host=localhost;dbname=biblioweb', 'root');
-$authorService = new AuthorService($db);
-$authorController = new AuthorController($authorService);
-$authorController->index();

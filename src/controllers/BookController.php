@@ -15,8 +15,3 @@ class BookController {
     }
 
 }
-
-$db = new PDO('mysql:host=localhost;dbname=biblioweb', 'root');
-$bookService = new BookService($db);
-$bookController = new BookController($bookService);
-$bookController->index();
