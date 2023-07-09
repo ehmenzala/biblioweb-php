@@ -619,6 +619,7 @@ header.container > * + * {
 .book-top > img {
   width: 100%;
   aspect-ratio: 1.88 / 3;
+  border-radius: 10px;
 }
 
 .media-scroller {

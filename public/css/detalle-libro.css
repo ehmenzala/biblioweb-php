@@ -316,6 +316,7 @@ footer .container {
 
 .book-info-cover {
   width: 250px;
+  border-radius: 10px;
 }
 
 .rating-stars {
