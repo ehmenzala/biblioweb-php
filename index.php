@@ -18,6 +18,7 @@ require BASE_PATH . '/src/services/MainService.php';
 require BASE_PATH . '/src/services/UserService.php';
 require BASE_PATH . '/src/services/BookService.php';
 require BASE_PATH . '/src/services/AuthorService.php';
+require BASE_PATH . '/src/services/GenreService.php';
 
 require BASE_PATH . '/src/controllers/BookController.php';
 require BASE_PATH . '/src/controllers/BookDetailController.php';
@@ -41,10 +42,12 @@ $db = new PDO('mysql:host=localhost;dbname=biblioweb', 'root');
 
 $userService = new UserService($db);
 $bookService = new BookService($db);
+$genreService = new GenreService($db);
 $authorService = new AuthorService($db);
+$userService = new UserService($db);
 
 $bookController = new BookController($bookService);
-$genreController = new GenreController($bookService);
+$genreController = new GenreController($genreService);
 $bookDetailController = new BookDetailController($bookService);
 $authorController = new AuthorController($authorService);
 $ratingBookController = new RatingBookController($bookService);
