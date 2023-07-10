@@ -2,14 +2,14 @@
 
 class GenreController {
 
-    private $bookService;
+    private $genreService;
 
-    function __construct(BookService $bookService) {
-        $this->bookService = $bookService;
+    function __construct(GenreService $genreService) {
+        $this->genreService = $genreService;
     }
 
     function index(): void {
-        $genres = $this->bookService->get_all_genres();
+        $genres = $this->genreService->get_all();
         require 'src/views/books.php';
     }
 
