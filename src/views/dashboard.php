@@ -294,20 +294,21 @@
       </div>
     </form>
     <div class="dashboard-form__controls">
-      <button form="book-form" type="submit" class="btn-form-dashboard">
+      <button form="book-form" type="button" id="open-search-book-dialog" class="btn-form-dashboard">
         Buscar libro
       </button>
-      <button form="book-form" type="submit" class="btn-form-dashboard">
+      <button form="book-form" type="submit" name="update" class="btn-form-dashboard">
         Actualizar
       </button>
-      <button form="book-form" type="submit" class="btn-form-dashboard">
+      <button form="book-form" type="submit" name="delete" class="btn-form-dashboard">
         Eliminar
       </button>
-      <button form="book-form" type="submit" class="btn-form-dashboard">
+      <button form="book-form" type="submit" name="create" class="btn-form-dashboard">
         Crear
       </button>
     </div>
     <button
+      type="button"
       id="close-books-dialog"
       class="form-modal__close"
       aria-label="Cerrar modal"
@@ -501,6 +502,31 @@
     </button>
     <button
       id="close-user-action-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="search-book-dialog">
+    <h2 class="form-modal__title">Busca el libro que necesites</h2>
+    <p>Debes buscar el libro por su ID.</p>
+    <form action="#" method="post" id="book-id-form" class="dashboard-form--one-field">
+      <div class="dashboard-form__field-group">
+        <label for="book-id" class="dashboard-form__label">ID de libro</label>
+        <input
+          class="dashboard-form__field"
+          id="book-id"
+          name="book-id"
+          type="number"
+          min="1"
+          placeholder="Ej. 3"
+        />
+      </div>
+    </form>
+    <button type="submit" form="book-id-form" class="btn-form-dashboard" aria-label="Buscar libro">
+      Buscar
+    </button>
+    <button
+      id="close-search-book-dialog"
       class="form-modal__close"
       aria-label="Cerrar modal"
     ></button>

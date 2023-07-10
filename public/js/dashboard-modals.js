@@ -5,18 +5,25 @@ const $openAuthorDialog = document.getElementById("open-author-dialog");
 const $openUserActionDialog = document.getElementById(
   "open-user-action-dialog"
 );
+const $openSearchBookDialog = document.getElementById(
+  "open-search-book-dialog"
+);
 
 const $closeBooksDialog = document.getElementById("close-books-dialog");
 const $closeUsersDialog = document.getElementById("close-users-dialog");
 const $closeGenreDialog = document.getElementById("close-genre-dialog");
 const $closeAuthorDialog = document.getElementById("close-author-dialog");
 const $closeUserAction = document.getElementById("close-user-action-dialog");
+const $closeSearchBookDialog = document.getElementById(
+  "close-search-book-dialog"
+);
 
 const $booksDialog = document.getElementById("books-dialog");
 const $usersDialog = document.getElementById("users-dialog");
 const $genreDialog = document.getElementById("genre-dialog");
 const $authorDialog = document.getElementById("author-dialog");
 const $userActionDialog = document.getElementById("user-action-dialog");
+const $searchBookDialog = document.getElementById("search-book-dialog");
 
 const $profileAuthorInput = document.getElementById("profile-img");
 const $authorInput = document.getElementById("new-author");
@@ -40,7 +47,6 @@ $authorInput.addEventListener("input", (e) => {
 /* *** User action */
 
 const $editUserBtns = document.querySelectorAll(".action-btn--edit");
-console.log($editUserBtns);
 
 const $userActionForm = document.getElementById("user-action-form");
 const $userActionTitle = document.getElementById("user-action-title");
@@ -118,6 +124,10 @@ function setupDialogs() {
     $userActionDialog.showModal();
   });
 
+  $openSearchBookDialog.addEventListener("click", () => {
+    $searchBookDialog.showModal();
+  });
+
   /* Close dialogs */
 
   $closeBooksDialog.addEventListener("click", () => {
@@ -138,5 +148,9 @@ function setupDialogs() {
 
   $closeUserAction.addEventListener("click", () => {
     $userActionDialog.close();
+  });
+
+  $closeSearchBookDialog.addEventListener("click", () => {
+    $searchBookDialog.close();
   });
 }
