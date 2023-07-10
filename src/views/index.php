@@ -128,26 +128,12 @@
                 alt="Portada del libro."
               />
               <div class="book-rating">
+                <?php for ($i = 1; $i <= (int) $book->get_rating(); $i++) { ?>
                 <img
                   src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
+                <?php } ?>
               </div>
               <h3>
                 <a class="book-link" href="/biblioweb/detalle-libro/?id=<?= $book->get_id() ?>"
@@ -179,26 +165,12 @@
                 alt="Portada del libro."
               />
               <div class="book-rating">
+                <?php for ($i = 1; $i <= (int) $book->get_rating(); $i++) { ?>
                 <img
                   src="/biblioweb/public/assets/img/icons/rating-star.svg"
                   alt="Estrella de rating"
                 />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
-                <img
-                  src="/biblioweb/public/assets/img/icons/rating-star.svg"
-                  alt="Estrella de rating"
-                />
+                <?php } ?>
               </div>
                 <h3>
                     <a class="book-link" href="/biblioweb/detalle-libro/?id=<?= $book->get_id() ?>"

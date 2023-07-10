@@ -112,26 +112,12 @@
             </div>
           </div>
           <div class="rating-stars">
-            <img
-              src="/biblioweb/public/assets/img/icons/rating-star.svg"
-              alt="Estrella de rating"
-            />
-            <img
-              src="/biblioweb/public/assets/img/icons/rating-star.svg"
-              alt="Estrella de rating"
-            />
-            <img
-              src="/biblioweb/public/assets/img/icons/rating-star.svg"
-              alt="Estrella de rating"
-            />
-            <img
-              src="/biblioweb/public/assets/img/icons/rating-star.svg"
-              alt="Estrella de rating"
-            />
-            <img
-              src="/biblioweb/public/assets/img/icons/rating-star.svg"
-              alt="Estrella de rating"
-            />
+          <?php for ($i = 1; $i <= (int) $book->get_rating(); $i++) { ?>
+          <img
+            src="/biblioweb/public/assets/img/icons/rating-star.svg"
+            alt="Estrella de rating"
+          />
+          <?php } ?>
           </div>
         </div>
         <h3>Descipción</h3>
