@@ -258,9 +258,10 @@
           >
         </div>
         <select name="genre" id="book-genre" class="dashboard-form__field">
-          <option value="Fantasía" selected>Fantasía</option>
-          <option value="Novela Romántica">Novela Romántica</option>
-          <option value="Cuento">Cuento</option>
+          <option value="none" selected>Género</option>
+          <?php foreach ($genres as $genre): ?>
+          <option value="<?= $genre->get_id() ?>" selected><?= $genre->get_name() ?></option>
+          <?php endforeach; ?>
         </select>
       </div>
       <div class="dashboard-form__field-group">
@@ -277,8 +278,9 @@
         </div>
         <select name="author" id="book-author" class="dashboard-form__field">
           <option value="Cal Newport" selected>Cal Newport</option>
-          <option value="Irene Vallejo">Irene Vallejo</option>
-          <option value="Adam Grant">Adam Grant</option>
+          <?php foreach ($authors as $author): ?>
+          <option value="<?= $author->get_id() ?>"><?= $author->get_full_name() ?></option>
+          <?php endforeach; ?>
         </select>
       </div>
       <div class="dashboard-form__field-group">
@@ -314,7 +316,7 @@
   <dialog class="form-modal" id="genre-dialog">
     <h2 class="form-modal__title">Crear un nuevo género</h2>
     <p>Crea un nuevo género si no encuentras el que buscas.</p>
-    <form method="post" id="genre-form" class="dashboard-form--one-field">
+    <form action="#" method="post" id="genre-form" class="dashboard-form--one-field">
       <div class="dashboard-form__field-group">
         <label for="genre" class="dashboard-form__label">Género</label>
         <input
@@ -338,7 +340,7 @@
   <dialog class="form-modal" id="author-dialog">
     <h2 class="form-modal__title">Crear un nuevo autor</h2>
     <p>Crea un nuevo autor si no encuentras el que buscas.</p>
-    <form method="post" id="author-form" class="dashboard-form--one-field">
+    <form action="#" method="post" id="author-form" class="dashboard-form--one-field">
       <div class="dashboard-form__field-group">
         <label for="new-author" class="dashboard-form__label">Autor</label>
         <input
@@ -390,12 +392,13 @@
           </tr>
         </thead>
         <tbody>
+          <?php foreach ($users as $user): ?>
           <tr>
-            <td>3</td>
-            <td>randuser</td>
-            <td>alquimia@roqwand.com</td>
+            <td><?= $user->get_id() ?></td>
+            <td><?= $user->get_username() ?></td>
+            <td><?= $user->get_email() ?></td>
             <td>
-              <span class="role role-admin">Admin</span>
+              <span class="role role-<?= strtolower($user->get_role()) ?>"><?= ucfirst($user->get_role()) ?></span>
             </td>
             <td class="user-table__actions">
               <button class="action-btn action-btn--edit">
@@ -411,110 +414,9 @@
                 />
               </button>
             </td>
-            <td>
-              002aa056a5b54df0c60d65edfe9479b677c48c1cf265ab4abefb29d8cafabc82
-            </td>
+            <td><?= $user->get_passwd() ?></td>
           </tr>
-          <tr>
-            <td>5</td>
-            <td>username</td>
-            <td>correo@correo.com</td>
-            <td>
-              <span class="role role-user">Usuario</span>
-            </td>
-            <td class="user-table__actions">
-              <button class="action-btn action-btn--edit">
-                <img
-                  src="/biblioweb/public/assets/img/icons/edit-icon.svg"
-                  alt="Ícono de editar registro"
-                />
-              </button>
-              <button class="action-btn action-btn--delete">
-                <img
-                  src="/biblioweb/public/assets/img/icons/delete-icon.svg"
-                  alt="Ícono de eliminar registro"
-                />
-              </button>
-            </td>
-            <td>
-              60c7ff6729cb8160a8a553a32be0922fcdeb939370b508cd52b0ae5714e40728
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>yareriru</td>
-            <td>correo@correo.com</td>
-            <td>
-              <span class="role role-user">Usuario</span>
-            </td>
-            <td class="user-table__actions">
-              <button class="action-btn action-btn--edit">
-                <img
-                  src="/biblioweb/public/assets/img/icons/edit-icon.svg"
-                  alt="Ícono de editar registro"
-                />
-              </button>
-              <button class="action-btn action-btn--delete">
-                <img
-                  src="/biblioweb/public/assets/img/icons/delete-icon.svg"
-                  alt="Ícono de eliminar registro"
-                />
-              </button>
-            </td>
-            <td>
-              4715a76a0b3865bd1baf96c7ac78d6d2a7bb0a46c194150bba9830b61496cc91
-            </td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>username</td>
-            <td>correo@correo.com</td>
-            <td>
-              <span class="role role-user">Usuario</span>
-            </td>
-            <td class="user-table__actions">
-              <button class="action-btn action-btn--edit">
-                <img
-                  src="/biblioweb/public/assets/img/icons/edit-icon.svg"
-                  alt="Ícono de editar registro"
-                />
-              </button>
-              <button class="action-btn action-btn--delete">
-                <img
-                  src="/biblioweb/public/assets/img/icons/delete-icon.svg"
-                  alt="Ícono de eliminar registro"
-                />
-              </button>
-            </td>
-            <td>
-              c1eddb9f06e7c8246d9fee61a865103961e27401abea5d21f1b3aa89be7a748c
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>username</td>
-            <td>correo@correo.com</td>
-            <td>
-              <span class="role role-user">Usuario</span>
-            </td>
-            <td class="user-table__actions">
-              <button class="action-btn action-btn--edit">
-                <img
-                  src="/biblioweb/public/assets/img/icons/edit-icon.svg"
-                  alt="Ícono de editar registro"
-                />
-              </button>
-              <button class="action-btn action-btn--delete">
-                <img
-                  src="/biblioweb/public/assets/img/icons/delete-icon.svg"
-                  alt="Ícono de eliminar registro"
-                />
-              </button>
-            </td>
-            <td>
-              fa95d4b80e817714d5bb657c642e67463f8463230de8b8ab17fcfc6dae4e565d
-            </td>
-          </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
@@ -537,9 +439,9 @@
       <span id="user-action-title-id" class="txt-purple">5</span>
     </h2>
     <p id="user-action-text">Estás creando un nuevo usuario.</p>
-    <form method="post" id="user-action-form" class="dashboard-form">
+    <form action="#" method="post" id="user-action-form" class="dashboard-form">
       <div class="dashboard-form__field-group">
-        <label for="user-id" class="dashboard-form__label">Username</label>
+        <label for="user-name" class="dashboard-form__label">Username</label>
         <input
           type="text"
           spellcheck="false"
@@ -582,8 +484,9 @@
           <label for="user-role" class="dashboard-form__label">Rol</label>
         </div>
         <select name="user-role" id="user-role" class="dashboard-form__field">
-          <option value="admin" selected>Admin</option>
-          <option value="usuario">Usuario</option>
+          <?php foreach ($user_roles as $user_role): ?>
+          <option value="<?= $user_role ?>" selected><?= ucfirst($user_role) ?></option>
+          <?php endforeach; ?>
         </select>
       </div>
       <input id="user-action-input" type="hidden" name="user-action" />

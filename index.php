@@ -51,7 +51,9 @@ $genreController = new GenreController($genreService);
 $bookDetailController = new BookDetailController($bookService);
 $authorController = new AuthorController($authorService);
 $ratingBookController = new RatingBookController($bookService);
-$dashboardController = new DashboardController($bookService);
+$dashboardController = new DashboardController(
+    $bookService, $genreService, $userService, $authorService
+);
 
 $apiRouter = new ApiRouter($bookService, $userService);
 
