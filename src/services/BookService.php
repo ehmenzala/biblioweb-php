@@ -68,16 +68,6 @@ class BookService extends MainService implements BookRepository {
         return $books;
     }
 
-    public function get_all_genres(): array {
-        $st = self::$db->prepare("SELECT * FROM genero");
-        $st->execute();
-        $results = $st->fetchAll();
-        $genres = array_map(function ($result) {
-            return new Genre($result["id_genero"], $result["nombre"]);
-        }, $results);
-        return $genres;
-    }
-
     public function get_by_genre_id(string $genre_id): array {
         $st = self::$db->prepare("
           SELECT l.id_libro, g.nombre AS genero, a.nombre_completo AS autor,
@@ -188,11 +178,11 @@ class BookService extends MainService implements BookRepository {
           INSERT INTO libro(id_genero, id_autor, titulo,
                             anio_publicacion, num_paginas, idioma,
                             idioma_original, descripcion, rating,
-                            fragmento, portada)
+                            fragmento, portada, visitas)
           VALUES (:genre_id, :author_id, :title,
                   :pub_year, :no_pages, :language,
                   :org_language, :description , :rating,
-                  :fragment, :cover)
+                  :fragment, :cover, :views)
         ");
 
         $st->execute(array(
@@ -207,6 +197,7 @@ class BookService extends MainService implements BookRepository {
             'rating' => $book->get_rating(),
             'fragment' => $book->get_fragment(),
             'cover' => $book->get_cover(),
+            'views' => 0,
         ));
     }
 

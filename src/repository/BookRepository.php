@@ -6,8 +6,6 @@ interface BookRepository {
 
     public function get_sorted_by_creation_date_desc(): array;
 
-    public function get_all_genres(): array;
-
     public function get_by_genre_id(string $genre_id): array;
 
     public function get_random_fragment(): string;
