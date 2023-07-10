@@ -32,12 +32,12 @@ class UserService extends MainService implements UserRepository {
     }
 
     public function add(User $user): void {
-        $statement = self::$db->prepare("
+        $st = self::$db->prepare("
           INSERT INTO usuario(correo, nombre_usuario, contrasenia, rol)
           VALUES (:email, :username, :passwd, :role)
         ");
 
-        $statement->execute(array(
+        $st->execute(array(
                 'email' => $user->get_email(),
                 'username' => $user->get_username(),
                 'passwd' => $user->get_passwd(),
@@ -45,11 +45,27 @@ class UserService extends MainService implements UserRepository {
         );
     }
 
+    public function get_all_user_roles(): array {
+        $st = self::$db->prepare("
+            SELECT rol, COUNT(*) AS cantidad
+            FROM usuario
+            GROUP BY rol");
+        $st->execute();
+        $results = $st->fetchAll();
+        $roles = [];
+        foreach ($results as $result) {
+            $roles[] = $result["rol"];
+        }
+
+        return $roles;
+
+    }
+
     public function get_all(): array {
-        $statement = self::$db->prepare("SELECT id_usuario, correo, nombre_usuario, contrasenia, rol FROM usuario");
-        $statement->execute();
-        $results = $statement->fetchAll();
-        $results = array_map(function ($result) {
+        $st = self::$db->prepare("SELECT id_usuario, correo, nombre_usuario, contrasenia, rol FROM usuario");
+        $st->execute();
+        $results = $st->fetchAll();
+        $users = array_map(function ($result) {
             return new User(
                 $result['id_usuario'],
                 $result['correo'],
@@ -58,7 +74,7 @@ class UserService extends MainService implements UserRepository {
                 $result['rol']
             );
         }, $results);
-        return $results;
+        return $users;
     }
 
 }
