@@ -26,6 +26,7 @@ require BASE_PATH . '/src/controllers/RatingBookController.php';
 require BASE_PATH . '/src/controllers/GenreController.php';
 require BASE_PATH . '/src/controllers/AuthorController.php';
 require BASE_PATH . '/src/controllers/DashboardController.php';
+require BASE_PATH . '/src/controllers/FormController.php';
 
 set_error_handler(function(int $errno, string $errstr) {
     if ((!str_contains($errstr, 'Undefined array key')) && (!str_contains($errstr, 'Undefined variable'))) {
@@ -54,6 +55,7 @@ $ratingBookController = new RatingBookController($bookService);
 $dashboardController = new DashboardController(
     $bookService, $genreService, $userService, $authorService
 );
+$formController = new FormController($bookService, $genreService, $authorService);
 
 $apiRouter = new ApiRouter($bookService, $userService);
 
@@ -67,5 +69,9 @@ $router->get('/biblioweb/detalle-libro/', [$bookDetailController, 'index']);
 $router->get('/biblioweb/autores/', [$authorController, 'index']);
 $router->get('/biblioweb/rating/', [$ratingBookController, 'index']);
 $router->get('/biblioweb/dashboard/', [$dashboardController, 'index']);
+
+$router->put('/biblioweb/create/genre/', [$formController, 'handle_create_genre']);
+$router->put('/biblioweb/create/author/', [$formController, 'handle_create_author']);
+$router->put('/biblioweb/create/book/', [$formController, 'handle_create_book']);
 
 $router->route($uri, $method);

@@ -145,7 +145,8 @@
       <span class="txt-purple" id="book-status">Creando...</span>
     </h2>
     <p>Gestiona los libros desde un solo lugar.</p>
-    <form action="#" method="post" id="book-form" class="dashboard-form">
+    <form action="/biblioweb/create/book/" enctype="multipart/form-data" method="post" id="book-form" class="dashboard-form">
+      <input type="hidden" name="_method" value="put">
       <div class="dashboard-form__field-group">
         <label for="book-id" class="dashboard-form__label">ID</label>
         <input
@@ -179,14 +180,14 @@
         />
       </div>
       <div class="dashboard-form__field-group">
-        <label for="pub_year" class="dashboard-form__label"
+        <label for="pub-year" class="dashboard-form__label"
           >Año de publicación</label
         >
         <input
           class="dashboard-form__field"
-          id="pub_year"
+          id="pub-year"
           type="number"
-          name="pub_year"
+          name="pub-year"
           placeholder="Ej. 1943"
         />
       </div>
@@ -257,7 +258,7 @@
             >Crear Género</a
           >
         </div>
-        <select name="genre" id="book-genre" class="dashboard-form__field">
+        <select name="genre-id" id="book-genre" class="dashboard-form__field">
           <option value="none" selected>Género</option>
           <?php foreach ($genres as $genre): ?>
           <option value="<?= $genre->get_id() ?>" selected><?= $genre->get_name() ?></option>
@@ -276,8 +277,8 @@
             >Crear Autor</a
           >
         </div>
-        <select name="author" id="book-author" class="dashboard-form__field">
-          <option value="Cal Newport" selected>Cal Newport</option>
+        <select name="author-id" id="book-author" class="dashboard-form__field">
+          <option value="none" selected>Autor</option>
           <?php foreach ($authors as $author): ?>
           <option value="<?= $author->get_id() ?>"><?= $author->get_full_name() ?></option>
           <?php endforeach; ?>
@@ -317,7 +318,8 @@
   <dialog class="form-modal" id="genre-dialog">
     <h2 class="form-modal__title">Crear un nuevo género</h2>
     <p>Crea un nuevo género si no encuentras el que buscas.</p>
-    <form action="#" method="post" id="genre-form" class="dashboard-form--one-field">
+    <form action="/biblioweb/create/genre/" method="post" id="genre-form" class="dashboard-form--one-field">
+      <input type="hidden" name="_method" value="put">
       <div class="dashboard-form__field-group">
         <label for="genre" class="dashboard-form__label">Género</label>
         <input
@@ -341,7 +343,8 @@
   <dialog class="form-modal" id="author-dialog">
     <h2 class="form-modal__title">Crear un nuevo autor</h2>
     <p>Crea un nuevo autor si no encuentras el que buscas.</p>
-    <form action="#" method="post" id="author-form" class="dashboard-form--one-field">
+    <form action="/biblioweb/create/author/" method="post" id="author-form" class="dashboard-form--one-field">
+      <input type="hidden" name="_method" value="put">
       <div class="dashboard-form__field-group">
         <label for="new-author" class="dashboard-form__label">Autor</label>
         <input
