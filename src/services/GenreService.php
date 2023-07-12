@@ -18,4 +18,9 @@ class GenreService extends MainService implements GenreRepository {
         return $genres;
     }
 
+    public function add(Genre $genre): void {
+        $st = self::$db->prepare("INSERT INTO genero(nombre) VALUES (:name)");
+        $st->execute(array('name' => $genre->get_name()));
+    }
+
 }
