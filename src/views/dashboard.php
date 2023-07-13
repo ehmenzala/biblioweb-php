@@ -261,7 +261,7 @@
         <select name="genre-id" id="book-genre" class="dashboard-form__field">
           <option value="none" selected>Género</option>
           <?php foreach ($genres as $genre): ?>
-          <option value="<?= $genre->get_id() ?>" selected><?= $genre->get_name() ?></option>
+          <option value="<?= $genre->get_id() ?>" ><?= $genre->get_name() ?></option>
           <?php endforeach; ?>
         </select>
       </div>
@@ -512,12 +512,12 @@
   <dialog class="form-modal" id="search-book-dialog">
     <h2 class="form-modal__title">Busca el libro que necesites</h2>
     <p>Debes buscar el libro por su ID.</p>
-    <form action="#" method="post" id="book-id-form" class="dashboard-form--one-field">
+    <form id="book-id-form" class="dashboard-form--one-field">
       <div class="dashboard-form__field-group">
-        <label for="book-id" class="dashboard-form__label">ID de libro</label>
+        <label for="search-book-id" class="dashboard-form__label">ID de libro</label>
         <input
           class="dashboard-form__field"
-          id="book-id"
+          id="search-book-id"
           name="book-id"
           type="number"
           min="1"
@@ -525,7 +525,7 @@
         />
       </div>
     </form>
-    <button type="submit" form="book-id-form" class="btn-form-dashboard" aria-label="Buscar libro">
+    <button type="button" form="book-id-form" id="search-book-id-btn" class="btn-form-dashboard" aria-label="Buscar libro">
       Buscar
     </button>
     <button
@@ -537,4 +537,5 @@
   <script src="/biblioweb/public/js/dashboard-charts.js"></script>
   <script src="/biblioweb/public/js/dashboard-navigation.js"></script>
   <script src="/biblioweb/public/js/dashboard-modals.js"></script>
+  <script src="/biblioweb/public/js/dashboard-forms.js"></script>
 </html>
