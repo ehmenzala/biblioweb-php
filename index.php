@@ -73,5 +73,8 @@ $router->get('/biblioweb/dashboard/', [$dashboardController, 'index']);
 $router->put('/biblioweb/create/genre/', [$formController, 'handle_create_genre']);
 $router->put('/biblioweb/create/author/', [$formController, 'handle_create_author']);
 $router->put('/biblioweb/create/book/', [$formController, 'handle_create_book']);
+$router->put('/biblioweb/update/book/', [$formController, 'handle_update_book']);
+
+$router->delete('/biblioweb/delete/book/', [$formController, 'handle_delete_book']);
 
 $router->route($uri, $method);
