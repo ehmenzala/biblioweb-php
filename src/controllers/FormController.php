@@ -39,9 +39,9 @@ class FormController {
         $org_language = $_POST['org-language'];
         $description = $_POST['description'];
         $fragment = $_POST['fragment'];
-        $cover = '/biblioweb/public/assets/img/covers/' . $_FILES["cover"]["name"];
 
         if ($_FILES["cover"]) {
+            $cover = '/biblioweb/public/assets/img/covers/' . $_FILES["cover"]["name"];
             $save_file_path = BASE_PATH . '/public/assets/img/covers/' . $_FILES["cover"]["name"];
             move_uploaded_file($_FILES["cover"]["tmp_name"], $save_file_path);
         }
@@ -59,10 +59,39 @@ class FormController {
 
     public function handle_update_book(): void {
 
+        $book_id = $_POST['book-id'];
+        $genre = new Genre($_POST['genre-id'], "");
+        $author = new Author($_POST['author-id'], "", "");
+        $rating = $_POST['rating'];
+        $title = $_POST['title'];
+        $pub_year = $_POST['pub-year'];
+        $no_pages = $_POST['no-pages'];
+        $language = $_POST['language'];
+        $org_language = $_POST['org-language'];
+        $description = $_POST['description'];
+        $fragment = $_POST['fragment'];
+
+        if ($_FILES["cover"]) {
+            $cover = '/biblioweb/public/assets/img/covers/' . $_FILES["cover"]["name"];
+            $save_file_path = BASE_PATH . '/public/assets/img/covers/' . $_FILES["cover"]["name"];
+            move_uploaded_file($_FILES["cover"]["tmp_name"], $save_file_path);
+        }
+
+        $book = new Book(
+            $book_id, $genre, $author,
+            $title, $pub_year, $no_pages,
+            $language, $org_language, $description,
+            $rating, $fragment, $cover, "0"
+        );
+
+        $this->bookService->update($book);
+        header("location: /biblioweb/dashboard/");
     }
 
     public function handle_delete_book(): void {
-
+        $bookId = $_POST['book-id'];
+        $this->bookService->delete($bookId);
+        header("location: /biblioweb/dashboard/");
     }
 
     public function handle_create_user(): void {
