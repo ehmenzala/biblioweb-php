@@ -5,11 +5,13 @@ class FormController {
     private $bookService;
     private $genreService;
     private $authorService;
+    private $userService;
 
-    public function __construct(BookService $bookService, GenreService $genreService, AuthorService $authorService) {
+    public function __construct(BookService $bookService, GenreService $genreService, AuthorService $authorService, UserService $userService) {
         $this->bookService = $bookService;
         $this->genreService = $genreService;
         $this->authorService = $authorService;
+        $this->userService = $userService;
     }
 
     public function handle_create_genre(): void {
@@ -98,7 +100,13 @@ class FormController {
 
     }
 
-    public function handle_modify_user(): void {
+    public function handle_delete_user(): void {
+        $userId = $_POST['user-id'];
+        $this->userService->delete($userId);
+        header("location: /biblioweb/dashboard/");
+    }
+
+    public function handle_update_user(): void {
 
     }
 

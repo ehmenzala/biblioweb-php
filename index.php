@@ -55,7 +55,9 @@ $ratingBookController = new RatingBookController($bookService);
 $dashboardController = new DashboardController(
     $bookService, $genreService, $userService, $authorService
 );
-$formController = new FormController($bookService, $genreService, $authorService);
+$formController = new FormController(
+    $bookService, $genreService, $authorService, $userService
+);
 
 $apiRouter = new ApiRouter($bookService, $userService);
 
@@ -76,5 +78,6 @@ $router->put('/biblioweb/create/book/', [$formController, 'handle_create_book'])
 $router->put('/biblioweb/update/book/', [$formController, 'handle_update_book']);
 
 $router->delete('/biblioweb/delete/book/', [$formController, 'handle_delete_book']);
+$router->delete('/biblioweb/delete/user/', [$formController, 'handle_delete_user']);
 
 $router->route($uri, $method);

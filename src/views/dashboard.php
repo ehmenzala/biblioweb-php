@@ -384,45 +384,58 @@
       <p>Gestiona los usuarios de la aplicación desde un solo lugar.</p>
     </div>
     <div class="user-table-wrapper">
-      <table class="user-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Correo</th>
-            <th>Rol</th>
-            <th>Acciones</th>
-            <th>Contraseña</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($users as $user): ?>
-          <tr>
-            <td><?= $user->get_id() ?></td>
-            <td><?= $user->get_username() ?></td>
-            <td><?= $user->get_email() ?></td>
-            <td>
-              <span class="role role-<?= strtolower($user->get_role()) ?>"><?= ucfirst($user->get_role()) ?></span>
-            </td>
-            <td class="user-table__actions">
-              <button class="action-btn action-btn--edit">
-                <img
-                  src="/biblioweb/public/assets/img/icons/edit-icon.svg"
-                  alt="Ícono de editar registro"
-                />
-              </button>
-              <button class="action-btn action-btn--delete">
-                <img
-                  src="/biblioweb/public/assets/img/icons/delete-icon.svg"
-                  alt="Ícono de eliminar registro"
-                />
-              </button>
-            </td>
-            <td><?= $user->get_passwd() ?></td>
-          </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+      <form action="/biblioweb/delete/user/" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Correo</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+              <th>Contraseña</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($users as $user): ?>
+            <tr>
+              <td><?= $user->get_id() ?></td>
+              <td><?= $user->get_username() ?></td>
+              <td><?= $user->get_email() ?></td>
+              <td>
+                <span class="role role-<?= strtolower($user->get_role()) ?>"><?= ucfirst($user->get_role()) ?></span>
+              </td>
+              <td class="user-table__actions">
+                <button
+                  type="button"
+                  class="action-btn action-btn--edit"
+                  aria-label="Editar el usuario con la Id <?= $user->get_id() ?>"
+                >
+                  <img
+                    src="/biblioweb/public/assets/img/icons/edit-icon.svg"
+                    alt="Ícono de editar registro"
+                  />
+                </button>
+                <button
+                  type="submit"
+                  name="user-id"
+                  value="<?= $user->get_id() ?>"
+                  class="action-btn action-btn--delete"
+                  aria-label="Eliminar el usuario con la Id <?= $user->get_id() ?>"
+                >
+                  <img
+                    src="/biblioweb/public/assets/img/icons/delete-icon.svg"
+                    alt="Ícono de eliminar registro"
+                  />
+                </button>
+              </td>
+              <td><?= $user->get_passwd() ?></td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </form>
     </div>
     <button
       type="button"
