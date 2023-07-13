@@ -221,11 +221,11 @@ class BookService extends MainService implements BookRepository {
                fragmento = :fragment,
                portada = :cover,
                visitas = :views
-           WHERE id_libro = :id_libro
+           WHERE id_libro = :book_id
         ");
 
         $st->execute(array(
-            'id_libro' => $book->get_id(),
+            'book_id' => $book->get_id(),
             'genre_id' => $book->get_genre()->get_id(),
             'author_id' => $book->get_author()->get_id(),
             'title' => $book->get_title(),
