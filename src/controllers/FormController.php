@@ -39,7 +39,7 @@ class FormController {
         $org_language = $_POST['org-language'];
         $description = $_POST['description'];
         $fragment = $_POST['fragment'];
-        $cover = '/biblioweb/public/assets/img/covers/' . $_POST['cover'];
+        $cover = '/biblioweb/public/assets/img/covers/' . $_FILES["cover"]["name"];
 
         if ($_FILES["cover"]) {
             $save_file_path = BASE_PATH . '/public/assets/img/covers/' . $_FILES["cover"]["name"];
