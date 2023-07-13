@@ -474,7 +474,7 @@
         <input
           class="dashboard-form__field"
           id="user-email"
-          type="text"
+          type="email"
           name="user-email"
           placeholder="Ej. email@gmail.com"
         />
