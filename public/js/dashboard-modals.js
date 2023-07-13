@@ -8,6 +8,9 @@ const $openUserActionDialog = document.getElementById(
 const $openSearchBookDialog = document.getElementById(
   "open-search-book-dialog"
 );
+const $openDeleteBookDialog = document.getElementById(
+  "open-delete-book-dialog"
+);
 
 const $closeBooksDialog = document.getElementById("close-books-dialog");
 const $closeUsersDialog = document.getElementById("close-users-dialog");
@@ -17,6 +20,9 @@ const $closeUserAction = document.getElementById("close-user-action-dialog");
 const $closeSearchBookDialog = document.getElementById(
   "close-search-book-dialog"
 );
+const $closeDeleteBookDialog = document.getElementById(
+  "close-delete-book-dialog"
+);
 
 const $booksDialog = document.getElementById("books-dialog");
 const $usersDialog = document.getElementById("users-dialog");
@@ -24,6 +30,7 @@ const $genreDialog = document.getElementById("genre-dialog");
 const $authorDialog = document.getElementById("author-dialog");
 const $userActionDialog = document.getElementById("user-action-dialog");
 const $searchBookDialog = document.getElementById("search-book-dialog");
+const $deleteBookDialog = document.getElementById("delete-book-dialog");
 
 const $profileAuthorInput = document.getElementById("profile-img");
 const $authorInput = document.getElementById("new-author");
@@ -128,6 +135,10 @@ function setupDialogs() {
     $searchBookDialog.showModal();
   });
 
+  $openDeleteBookDialog.addEventListener("click", () => {
+    $deleteBookDialog.showModal();
+  });
+
   /* Close dialogs */
 
   $closeBooksDialog.addEventListener("click", () => {
@@ -152,5 +163,9 @@ function setupDialogs() {
 
   $closeSearchBookDialog.addEventListener("click", () => {
     $searchBookDialog.close();
+  });
+
+  $closeDeleteBookDialog.addEventListener("click", () => {
+    $deleteBookDialog.close();
   });
 }

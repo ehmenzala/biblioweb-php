@@ -298,13 +298,13 @@
       <button form="book-form" type="button" id="open-search-book-dialog" class="btn-form-dashboard">
         Buscar libro
       </button>
-      <button form="book-form" type="submit" name="update" class="btn-form-dashboard">
+      <button form="book-form" id="update-book-btn" type="submit" name="update" class="btn-form-dashboard">
         Actualizar
       </button>
-      <button form="book-form" type="submit" name="delete" class="btn-form-dashboard">
+      <button form="book-form" type="button" id="open-delete-book-dialog" class="btn-form-dashboard">
         Eliminar
       </button>
-      <button form="book-form" type="submit" name="create" class="btn-form-dashboard">
+      <button form="book-form" id="create-book-btn" type="submit" name="create" class="btn-form-dashboard">
         Crear
       </button>
     </div>
@@ -530,6 +530,32 @@
     </button>
     <button
       id="close-search-book-dialog"
+      class="form-modal__close"
+      aria-label="Cerrar modal"
+    ></button>
+  </dialog>
+  <dialog class="form-modal" id="delete-book-dialog">
+    <h2 class="form-modal__title">Elimine el libro que desees</h2>
+    <p>Debe colobar el ID del libro que desea eliminar.</p>
+    <form action="/biblioweb/delete/book/" method="post" id="delete-book-form" class="dashboard-form--one-field">
+      <input type="hidden" name="_method" value="delete">
+      <div class="dashboard-form__field-group">
+        <label for="delete-book-id" class="dashboard-form__label">ID de libro</label>
+        <input
+          class="dashboard-form__field"
+          id="delete-book-id"
+          name="book-id"
+          type="number"
+          min="1"
+          placeholder="Ej. 7"
+        />
+      </div>
+    </form>
+    <button type="submit" form="delete-book-form" class="btn-form-dashboard" aria-label="Eliminar libro">
+      Confirmar
+    </button>
+    <button
+      id="close-delete-book-dialog"
       class="form-modal__close"
       aria-label="Cerrar modal"
     ></button>
