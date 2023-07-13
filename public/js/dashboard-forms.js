@@ -54,11 +54,26 @@ $searchBtn.addEventListener("click", () => {
 
       $authorOptions.forEach(($authorOption) => {
         if ($authorOption.textContent === author) {
-          $genreIdSelect.value = $authorOption.value;
+          $authorIdSelect.value = $authorOption.value;
         }
       });
 
       $searchBookDialog.close();
       $bookFormStatus.textContent = `ID ${id}`;
     });
+});
+
+$createBookBtn = document.getElementById("create-book-btn");
+$updateBookBtn = document.getElementById("update-book-btn");
+
+$bookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (e.submitter === $createBookBtn) {
+    $bookForm.action = "/biblioweb/create/book/";
+  } else if (e.submitter === $updateBookBtn) {
+    $bookForm.action = "/biblioweb/update/book/";
+  }
+
+  $bookForm.submit();
 });
