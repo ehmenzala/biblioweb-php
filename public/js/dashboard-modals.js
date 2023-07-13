@@ -59,6 +59,7 @@ const $userActionForm = document.getElementById("user-action-form");
 const $userActionTitle = document.getElementById("user-action-title");
 const $userActionUserId = document.getElementById("user-action-title-id");
 const $userActionText = document.getElementById("user-action-text");
+const $editUserIdInput = document.getElementById("edit-user-id");
 
 $editUserBtns.forEach(($editUserBtn) => {
   $editUserBtn.addEventListener("click", (e) => {
@@ -74,7 +75,8 @@ $editUserBtns.forEach(($editUserBtn) => {
       role: userData[3],
       passwd: userData[4],
     });
-    console.log(userData);
+
+    $editUserIdInput.value = userData[0];
   });
 });
 

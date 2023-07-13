@@ -76,6 +76,8 @@ $router->put('/biblioweb/create/genre/', [$formController, 'handle_create_genre'
 $router->put('/biblioweb/create/author/', [$formController, 'handle_create_author']);
 $router->put('/biblioweb/create/book/', [$formController, 'handle_create_book']);
 $router->put('/biblioweb/update/book/', [$formController, 'handle_update_book']);
+$router->put('/biblioweb/create/user/', [$formController, 'handle_create_user']);
+$router->put('/biblioweb/update/user/', [$formController, 'handle_update_user']);
 
 $router->delete('/biblioweb/delete/book/', [$formController, 'handle_delete_book']);
 $router->delete('/biblioweb/delete/user/', [$formController, 'handle_delete_user']);

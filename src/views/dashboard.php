@@ -456,7 +456,9 @@
       <span id="user-action-title-id" class="txt-purple">5</span>
     </h2>
     <p id="user-action-text">Estás creando un nuevo usuario.</p>
-    <form action="#" method="post" id="user-action-form" class="dashboard-form">
+    <form action="/biblioweb/create/user/" method="post" id="user-action-form" class="dashboard-form">
+      <input type="hidden" id="edit-user-id" name="edit-user-id" value="">
+      <input type="hidden" name="_method" value="put">
       <div class="dashboard-form__field-group">
         <label for="user-name" class="dashboard-form__label">Username</label>
         <input
@@ -511,10 +513,18 @@
     <button
       type="submit"
       form="user-action-form"
-      id="user-action-submit"
+      id="user-create-submit"
       class="btn-form-dashboard"
     >
-      Confirmar
+      Crear
+    </button>
+    <button
+      type="submit"
+      form="user-action-form"
+      id="user-update-submit"
+      class="btn-form-dashboard"
+    >
+      Actualizar
     </button>
     <button
       id="close-user-action-dialog"

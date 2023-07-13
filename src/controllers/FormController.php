@@ -97,7 +97,13 @@ class FormController {
     }
 
     public function handle_create_user(): void {
-
+        $username = $_POST['user-name'];
+        $email = $_POST['user-email'];
+        $passwd = hash('sha256', $_POST['user-passwd']);
+        $role = $_POST['user-role'];
+        $newUser = new User("", $email, $username, $passwd, $role);
+        $this->userService->add($newUser);
+        header("location: /biblioweb/dashboard/");
     }
 
     public function handle_delete_user(): void {
@@ -107,7 +113,14 @@ class FormController {
     }
 
     public function handle_update_user(): void {
-
+        $userId = $_POST['edit-user-id'];
+        $username = $_POST['user-name'];
+        $email = $_POST['user-email'];
+        $passwd = hash('sha256', $_POST['user-passwd']);
+        $role = $_POST['user-role'];
+        $user = new User($userId, $email, $username, $passwd, $role);
+        $this->userService->update($user);
+        header("location: /biblioweb/dashboard/");
     }
 
 }

@@ -63,8 +63,8 @@ $searchBtn.addEventListener("click", () => {
     });
 });
 
-$createBookBtn = document.getElementById("create-book-btn");
-$updateBookBtn = document.getElementById("update-book-btn");
+const $createBookBtn = document.getElementById("create-book-btn");
+const $updateBookBtn = document.getElementById("update-book-btn");
 
 $bookForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -76,4 +76,19 @@ $bookForm.addEventListener("submit", (e) => {
   }
 
   $bookForm.submit();
+});
+
+const $createUserBtn = document.getElementById("user-create-submit");
+const $updateUserBtn = document.getElementById("user-update-submit");
+
+$userActionForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (e.submitter === $createUserBtn) {
+    $userActionForm.action = "/biblioweb/create/user/";
+  } else if (e.submitter === $updateUserBtn) {
+    $userActionForm.action = "/biblioweb/update/user/";
+  }
+
+  $userActionForm.submit();
 });
