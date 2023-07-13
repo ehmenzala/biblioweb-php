@@ -77,4 +77,9 @@ class UserService extends MainService implements UserRepository {
         return $users;
     }
 
+    public function delete(string $id): void {
+        $st = self::$db->prepare("DELETE FROM usuario WHERE id_usuario = :user_id");
+        $st->execute(array('user_id' => $id));
+    }
+
 }

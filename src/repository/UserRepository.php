@@ -10,4 +10,6 @@ interface UserRepository {
 
     public function get_all(): array;
 
+    public function delete(string $id): void;
+
 }
