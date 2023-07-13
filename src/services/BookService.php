@@ -207,8 +207,38 @@ class BookService extends MainService implements BookRepository {
     }
 
     public function update(Book $book): void {
-        // TODO: Implement this method soon.
-        echo 'Hi';
+        $st = self::$db->prepare("
+          UPDATE libro SET 
+               id_genero= :genre_id,
+               id_autor = :author_id,
+               titulo = :title,
+               anio_publicacion = :pub_year,
+               num_paginas = :no_pages,
+               idioma = :language,
+               idioma_original = :org_language,
+               descripcion = :description,
+               rating = :rating,
+               fragmento = :fragment,
+               portada = :cover,
+               visitas = :views
+           WHERE id_libro = :id_libro
+        ");
+
+        $st->execute(array(
+            'id_libro' => $book->get_id(),
+            'genre_id' => $book->get_genre()->get_id(),
+            'author_id' => $book->get_author()->get_id(),
+            'title' => $book->get_title(),
+            'pub_year' => $book->get_pub_year(),
+            'no_pages' => $book->get_no_pages(),
+            'language' => $book->get_language(),
+            'org_language' => $book->get_org_language(),
+            'description' => $book->get_description(),
+            'rating' => $book->get_rating(),
+            'fragment' => $book->get_fragment(),
+            'cover' => $book->get_cover(),
+            'views' => 0,
+        ));
     }
 
 }
