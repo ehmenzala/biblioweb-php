@@ -65,7 +65,7 @@ $editUserBtns.forEach(($editUserBtn) => {
     const $selectedUserRow = e.target.closest("tr");
     const userData = [
       ...$selectedUserRow.querySelectorAll("td:not(:nth-child(5))"),
-    ].map((td) => td.textContent.trim().toLowerCase());
+    ].map((td) => td.textContent.trim());
 
     openUserActionDialogWithParams({
       id: userData[0],
@@ -99,9 +99,7 @@ function openUserActionDialogWithParams({ id, username, email, role, passwd }) {
   $usernameInput.value = username;
   $emailInput.value = email;
   $passwdInput.value = passwd;
-  $roleSelect.selectedIndex = SELECT_OPTIONS.indexOf(role);
-
-  console.log(`Selected role: ${SELECT_OPTIONS.indexOf(role)}`);
+  $roleSelect.selectedIndex = SELECT_OPTIONS.indexOf(role.toLowerCase());
 
   $userActionTitle.textContent = "Modificando usuario";
   $userActionText.textContent = "Estás modificando un usuario existente.";
