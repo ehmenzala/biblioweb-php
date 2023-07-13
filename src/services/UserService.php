@@ -82,4 +82,22 @@ class UserService extends MainService implements UserRepository {
         $st->execute(array('user_id' => $id));
     }
 
+    public function update(User $user): void {
+        $st = self::$db->prepare("
+            UPDATE usuario SET
+                correo = :email,
+                nombre_usuario = :username,
+                contrasenia = :passwd,
+                rol = :role
+           WHERE id_usuario = :user_id");
+
+        $st->execute(array(
+            'user_id' => $user->get_id(),
+            'email' => $user->get_email(),
+            'username' => $user->get_username(),
+            'passwd' => $user->get_passwd(),
+            'role' => $user->get_role(),
+        ));
+    }
+
 }

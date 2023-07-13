@@ -12,4 +12,6 @@ interface UserRepository {
 
     public function delete(string $id): void;
 
+    public function update(User $user): void;
+
 }
