@@ -114,7 +114,7 @@ class FormController {
 
     public function handle_update_user(): void {
         $userId = $_POST['edit-user-id'];
-        $username = $_POST['user-name'];
+        $username = $_POST['username'];
         $email = $_POST['user-email'];
         $passwd = hash('sha256', $_POST['user-passwd']);
         $role = $_POST['user-role'];

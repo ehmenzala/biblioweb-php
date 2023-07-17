@@ -93,7 +93,7 @@ setupDialogs();
 
 function openUserActionDialogWithParams({ id, username, email, role, passwd }) {
   const SELECT_OPTIONS = ["admin", "usuario"];
-  const $usernameInput = document.getElementById("user-name");
+  const $usernameInput = document.getElementById("username");
   const $emailInput = document.getElementById("user-email");
   const $passwdInput = document.getElementById("user-passwd");
   const $roleSelect = document.getElementById("user-role");
