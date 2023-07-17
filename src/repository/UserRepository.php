@@ -2,7 +2,7 @@
 
 interface UserRepository {
 
-    public function get_by_username_and_passwd($username, $passwd): User;
+    public function get_by_username_and_passwd($username, $passwd): User|bool;
 
     public function add(User $user): void;
 

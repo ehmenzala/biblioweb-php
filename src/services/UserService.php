@@ -8,7 +8,7 @@ class UserService extends MainService implements UserRepository {
         self::init($db);
     }
 
-    public function get_by_username_and_passwd($username, $passwd): User {
+    public function get_by_username_and_passwd($username, $passwd): User|bool {
         $st = self::$db->prepare("
           SELECT id_usuario, correo, nombre_usuario, contrasenia, rol
           FROM usuario
@@ -22,13 +22,16 @@ class UserService extends MainService implements UserRepository {
 
         $result = $st->fetch();
 
-        $user = new User(
-            $result['id_usuario'], $result['correo'],
-            $result['nombre_usuario'], $result['contrasenia'],
-            $result['rol']
-        );
-
-        return $user;
+        if($result) {
+            $user = new User(
+                $result['id_usuario'], $result['correo'],
+                $result['nombre_usuario'], $result['contrasenia'],
+                $result['rol']
+            );
+            return $user;
+        } else {
+            return $result;
+        }
     }
 
     public function add(User $user): void {
