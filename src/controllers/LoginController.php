@@ -29,4 +29,16 @@ class LoginController {
         header("location: /biblioweb/");
     }
 
+    public function register(): void {
+        $username = $_POST['username'];
+        $email = $_POST['user-email'];
+        $passwd = hash('sha256', $_POST['user-passwd']);
+        $role = $_POST['user-role'];
+        $toRegisterUser = new User("", $email, $username, $passwd, $role);
+        $this->loginModel->register($toRegisterUser);
+        $_SESSION['username'] = $toRegisterUser->get_username();
+        $_SESSION['role'] = $toRegisterUser->get_role();
+        header("location: /biblioweb/");
+    }
+
 }
