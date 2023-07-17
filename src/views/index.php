@@ -381,7 +381,9 @@
       </form>
     </dialog>
     <dialog id="register-dialog" class="registration">
-      <form action="/biblioweb/process-register.php" method="post">
+      <form action="/biblioweb/user/register/" method="post">
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="user-role" value="usuario">
         <button
           type="button"
           class="registration__close-btn"
@@ -398,7 +400,7 @@
           <input
             type="text"
             id="reg-username"
-            name="reg-username"
+            name="username"
             placeholder="Ej. robcmartin"
           />
         </div>
@@ -407,7 +409,7 @@
           <input
             type="email"
             id="reg-email"
-            name="reg-email"
+            name="user-email"
             placeholder="Ej. rob@cmartin.com"
           />
         </div>
@@ -416,7 +418,7 @@
           <input
             type="password"
             id="reg-pass"
-            name="reg-pass"
+            name="user-passwd"
             placeholder="*************"
           />
         </div>
