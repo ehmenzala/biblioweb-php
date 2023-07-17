@@ -460,12 +460,12 @@
       <input type="hidden" id="edit-user-id" name="edit-user-id" value="">
       <input type="hidden" name="_method" value="put">
       <div class="dashboard-form__field-group">
-        <label for="user-name" class="dashboard-form__label">Username</label>
+        <label for="username" class="dashboard-form__label">Username</label>
         <input
           type="text"
           spellcheck="false"
-          name="user-name"
-          id="user-name"
+          name="username"
+          id="username"
           class="dashboard-form__field"
         />
       </div>

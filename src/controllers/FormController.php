@@ -97,7 +97,7 @@ class FormController {
     }
 
     public function handle_create_user(): void {
-        $username = $_POST['user-name'];
+        $username = $_POST['username'];
         $email = $_POST['user-email'];
         $passwd = hash('sha256', $_POST['user-passwd']);
         $role = $_POST['user-role'];
