@@ -33,6 +33,14 @@
         ><button id="open-register-dialog" class="header-session-btn">
           Sign up
         </button>
+        <?php if ($_SESSION['username']): ?>
+        <span class="header-session-btn--deco"> // </span
+        ><form action="/biblioweb/user/logout/" method="post">
+            <button id="close-session" class="header-session-btn">
+              Salir
+            </button>
+        </form>
+        <?php endif; ?>
       </div>
       <nav class="page-nav">
         <ul class="page-nav-links" role="list">
@@ -45,12 +53,20 @@
           <li class="page-nav-item">
             <a class="page-nav-link" href="/biblioweb/rating/">Rating</a>
           </li>
+          <?php if ($_SESSION['role'] === 'admin'): ?>
+          <li class="page-nav-item">
+            <a class="page-nav-link" href="/biblioweb/dashboard/">Dashboard</a>
+          </li>
+          <?php endif; ?>
         </ul>
       </nav>
     </header>
     <main>
       <section class="container hero-section section">
         <div>
+          <?php if ($_SESSION['username']): ?>
+          <p>Hola, <?= strtoupper($_SESSION['username']) ?>. Bienvenido a la...</p>
+          <?php endif; ?>
           <h1 class="hero-section__title">Biblioteca virtual</h1>
           <p class="hero-section__text">
             lee cualquiera de nuestros libros al registrarte
@@ -319,7 +335,7 @@
       </div>
     </footer>
     <dialog id="login-dialog" class="registration">
-      <form action="/biblioweb/process-login.php" method="post">
+      <form action="/biblioweb/user/login/" method="post">
         <button
           type="button"
           class="registration__close-btn"
@@ -336,7 +352,7 @@
           <input
             type="text"
             id="log-username"
-            name="log-username"
+            name="username"
             placeholder="Ej. robcmartin"
           />
         </div>
@@ -345,7 +361,7 @@
           <input
             type="password"
             id="log-pass"
-            name="log-pass"
+            name="user-passwd"
             placeholder="*************"
           />
         </div>

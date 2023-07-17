@@ -13,6 +13,7 @@ require BASE_PATH . '/src/models/User.php';
 require BASE_PATH . '/src/models/Book.php';
 require BASE_PATH . '/src/models/Author.php';
 require BASE_PATH . '/src/models/Genre.php';
+require BASE_PATH . '/src/models/LoginModel.php';
 
 require BASE_PATH . '/src/services/MainService.php';
 require BASE_PATH . '/src/services/UserService.php';
@@ -27,6 +28,7 @@ require BASE_PATH . '/src/controllers/GenreController.php';
 require BASE_PATH . '/src/controllers/AuthorController.php';
 require BASE_PATH . '/src/controllers/DashboardController.php';
 require BASE_PATH . '/src/controllers/FormController.php';
+require BASE_PATH . '/src/controllers/LoginController.php';
 
 set_error_handler(function(int $errno, string $errstr) {
     if ((!str_contains($errstr, 'Undefined array key')) && (!str_contains($errstr, 'Undefined variable'))) {
@@ -46,6 +48,7 @@ $bookService = new BookService($db);
 $genreService = new GenreService($db);
 $authorService = new AuthorService($db);
 $userService = new UserService($db);
+$loginModel = new LoginModel($userService);
 
 $bookController = new BookController($bookService);
 $genreController = new GenreController($genreService);
@@ -58,6 +61,7 @@ $dashboardController = new DashboardController(
 $formController = new FormController(
     $bookService, $genreService, $authorService, $userService
 );
+$loginController = new LoginController($loginModel);
 
 $apiRouter = new ApiRouter($bookService, $userService);
 
@@ -71,6 +75,9 @@ $router->get('/biblioweb/detalle-libro/', [$bookDetailController, 'index']);
 $router->get('/biblioweb/autores/', [$authorController, 'index']);
 $router->get('/biblioweb/rating/', [$ratingBookController, 'index']);
 $router->get('/biblioweb/dashboard/', [$dashboardController, 'index']);
+
+$router->post('/biblioweb/user/login/', [$loginController, 'authenticate']);
+$router->post('/biblioweb/user/logout/', [$loginController, 'logout']);
 
 $router->put('/biblioweb/create/genre/', [$formController, 'handle_create_genre']);
 $router->put('/biblioweb/create/author/', [$formController, 'handle_create_author']);

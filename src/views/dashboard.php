@@ -50,11 +50,11 @@
           </ul>
         </nav>
         <div class="profile">
-          <p class="profile__welcome">Hola, ADMIN</p>
+          <p class="profile__welcome">Hola, <?= strtoupper($_SESSION['username']) ?></p>
           <div class="profile__img-container">
             <img
               class="profile__img"
-              src="https://api.dicebear.com/6.x/lorelei/svg?seed=Mittens"
+              src="https://api.dicebear.com/6.x/lorelei/svg?seed=<?= $_SESSION['username'] ?>"
               alt="Imagen de perfil del administrador"
             />
           </div>
