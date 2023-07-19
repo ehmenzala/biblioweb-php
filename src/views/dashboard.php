@@ -167,6 +167,7 @@
           max="5"
           name="rating"
           placeholder="Ej. 5"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -177,6 +178,7 @@
           type="text"
           name="title"
           placeholder="Ej. El Principito"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -189,6 +191,7 @@
           type="number"
           name="pub-year"
           placeholder="Ej. 1943"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -201,6 +204,7 @@
           type="number"
           name="no-pages"
           placeholder="Ej. 120"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -211,6 +215,7 @@
           type="text"
           name="language"
           placeholder="Ej. Español"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -223,6 +228,7 @@
           type="text"
           name="org-language"
           placeholder="Ej. Francés"
+          required
         />
       </div>
       <div class="dashboard-form__field-group">
@@ -235,6 +241,7 @@
           name="description"
           rows="1"
           placeholder="Ej. Este libro es fabuloso..."
+          required
         ></textarea>
       </div>
       <div class="dashboard-form__field-group">
@@ -245,6 +252,7 @@
           name="fragment"
           rows="1"
           placeholder="Ej. Cuando tenía seis años..."
+          required
         ></textarea>
       </div>
       <div class="dashboard-form__field-group">
@@ -258,8 +266,8 @@
             >Crear Género</a
           >
         </div>
-        <select name="genre-id" id="book-genre" class="dashboard-form__field">
-          <option value="none" selected>Género</option>
+        <select name="genre-id" id="book-genre" class="dashboard-form__field" required>
+          <option value="" selected>Género</option>
           <?php foreach ($genres as $genre): ?>
           <option value="<?= $genre->get_id() ?>" ><?= $genre->get_name() ?></option>
           <?php endforeach; ?>
@@ -277,8 +285,8 @@
             >Crear Autor</a
           >
         </div>
-        <select name="author-id" id="book-author" class="dashboard-form__field">
-          <option value="none" selected>Autor</option>
+        <select name="author-id" id="book-author" class="dashboard-form__field" required>
+          <option value="" selected>Autor</option>
           <?php foreach ($authors as $author): ?>
           <option value="<?= $author->get_id() ?>"><?= $author->get_full_name() ?></option>
           <?php endforeach; ?>
@@ -291,6 +299,7 @@
           id="cover"
           type="file"
           name="cover"
+          required
         />
       </div>
     </form>
