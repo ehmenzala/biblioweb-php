@@ -20,4 +20,4 @@ Technologies:
 
 ## Acknowledgements
 
-This website's design was heavely inspired by the one made by [Anastasia Mihalko](https://www.behance.net/jovenibrid03b0). You can [check her design here](https://www.behance.net/gallery/122142911/Book-stream-website-UIUX/modules/846678363).
+This website's design was heavely inspired by the one made by [Anastasia Mihalko](https://www.behance.net/jovenibrid03b0). You can [check her design here](https://www.behance.net/gallery/122142911/Book-stream-website-UIUX).
